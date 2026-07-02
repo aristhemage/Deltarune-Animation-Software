@@ -1,0 +1,1 @@
+focus = obj_camera_focus_dot

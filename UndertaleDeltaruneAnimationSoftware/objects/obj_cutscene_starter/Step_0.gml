@@ -1,0 +1,2 @@
+cutscene();
+instance_destroy();	
