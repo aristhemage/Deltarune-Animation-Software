@@ -1,3 +1,7 @@
+cam_width = 320 * obj_camera_focus_dot.zoom;
+cam_height = 240 * obj_camera_focus_dot.zoom;
+camera_set_view_size(cam,cam_width,cam_height)
+
 if(instance_exists(obj_camera_focus)){
 	var target_x = obj_camera_focus.x - cam_width / 2;
 	var target_y = obj_camera_focus.y - cam_height / 2;

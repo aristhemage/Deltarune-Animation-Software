@@ -1,7 +1,7 @@
 draw_set_font(fnt_text);
 
 var _x = 50;
-var _y = 10;
+var _y = on_bottom ? camera_get_view_height(0)-sprite_get_height(spr_lightworld_textbox) - 10: 10;
 
 var offset_x = has_face ? sprite_get_width(is_array(face_sprite) ? face_sprite[message_no] : face_sprite) + 100 : 30;
 var offset_y = 30;

@@ -153,7 +153,8 @@ if (cutscene_active) {
 					change_sprite_when_talking: action.change_sprite_when_talking,
 					actor: action.actor,
 					overworld_sprite_arr: action.overworld_sprite_arr,
-					sprite_spd_arr: action.sprite_spd_arr
+					sprite_spd_arr: action.sprite_spd_arr,
+					on_bottom: action.on_bottom
 				})
 				current_action++;
 			break;

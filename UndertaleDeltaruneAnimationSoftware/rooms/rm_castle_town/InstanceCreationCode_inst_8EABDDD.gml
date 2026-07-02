@@ -1,7 +1,7 @@
 function cutscene(){
 	with(obj_cutscene_master){
 		var actions = [
-				action_wait_time(1),
+				action_wait_time(0.25),
 				action_move_actor_nondirect("Susie",obj_checkpoint_a.x,obj_checkpoint_a.y,2,PREFER.VERT),
 				action_display_text(["Woah I cant beleive that over there is the true identiy of the roaring knight!"],snd_text_susie,true,1,120,true,spr_face_susie,8,2,false),
 				action_wait_for_object_destroy(obj_textbox),

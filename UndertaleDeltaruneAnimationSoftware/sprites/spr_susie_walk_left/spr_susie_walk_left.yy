@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Susie",
-    "path":"folders/Sprites/Susie.yy",
+    "name":"Lightworld",
+    "path":"folders/Sprites/Susie/Lightworld.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
