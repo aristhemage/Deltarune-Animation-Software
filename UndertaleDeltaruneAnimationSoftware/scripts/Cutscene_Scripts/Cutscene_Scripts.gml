@@ -127,6 +127,31 @@ function action_wait_for_object_destroy(obj) {
         obj: obj
     };
 }
+function action_actor_change_sprite(actor,sprite,spd = 1){
+	return {
+		type: ACTION.ACTOR_CHANGE_SPRITE,
+		actor: actor,
+		sprite: sprite,
+		spd: spd
+	}
+}
+
+function action_play_sound (snd, wait_until_finish = false){
+	return {
+		type: ACTION.PLAY_SOUND,
+		snd: snd,
+		wait_until_finish: wait_until_finish,
+		sound_instance : undefined
+	}
+}
+
+function action_actor_set_autowalk(actor, state){
+	return{
+		type: ACTION.ACTOR_SET_AUTOWALK,
+		actor: actor,
+		state: state,
+	}
+}
 
 function action_fade_object(obj) {
     return {

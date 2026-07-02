@@ -165,10 +165,23 @@ if (cutscene_active) {
                 }
              break;
 
+			// Change an actors sprite
+			case ACTION.ACTOR_CHANGE_SPRITE:
+				var _actor = get_actor_by_id(action.actor)
+				_actor.sprite_index = action.sprite
+				_actor.image_speed = action.spd;
+				_actor.image_index = 0;
+				_actor.auto_animate_walk = false;
+				current_action++;
+			break;
 			
+			// Change the autowalk state
+			case ACTION.ACTOR_SET_AUTOWALK:
+				var _actor = get_actor_by_id(action.actor);
+				_actor.auto_animate_walk = action.state;
+				current_action++;
+			break;
 			
-			
-
 			//Wait a certain amount of time, measured in seconds, see else
             case ACTION.WAIT_TIME:
                 waiting = true;
@@ -206,7 +219,22 @@ if (cutscene_active) {
 		        current_action += 1; 
 		        break;
 			
-			// Destroy an actor
+			// Play a sound
+			case ACTION.PLAY_SOUND:
+				// Only play the sound once
+				if (is_undefined(action.sound_instance)){
+					action.sound_instance = audio_play_sound(action.snd, 1, false);
+				}
+				
+				if (action.wait_until_finish){
+					if (!audio_is_playing(action.sound_instance)){
+						current_action++;
+					}
+				}
+				else{
+					current_action++;
+				}
+			break;
 				
 			//Fade out an object, MUST HAVE THE FADE VARIABLE
 			case ACTION.FADE_OBJECT:

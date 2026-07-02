@@ -17,6 +17,9 @@ function Enums(){
 		GOTO_ROOM,
 		SET_VAR,
 		INC_VAR,
+		ACTOR_CHANGE_SPRITE,
+		PLAY_SOUND,
+		ACTOR_SET_AUTOWALK,
 	}
 	
 	enum PREFER {
