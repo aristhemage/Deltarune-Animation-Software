@@ -24,6 +24,7 @@
     {"$GMFolder":"","%Name":"Dummy","folderPath":"folders/Sprites/Dummy.yy","name":"Dummy","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Susie","folderPath":"folders/Sprites/Susie.yy","name":"Susie","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Textbox","folderPath":"folders/Sprites/Textbox.yy","name":"Textbox","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Toby","folderPath":"folders/Sprites/Toby.yy","name":"Toby","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[
     {"link":"io.gamemaker.sdfshaders-1.0.0","name":"io.gamemaker.sdfshaders-1.0.0","path":"io.gamemaker.sdfshaders-1.0.0.yyp",},
@@ -67,6 +68,7 @@
     {"id":{"name":"spr_susie_walk_left","path":"sprites/spr_susie_walk_left/spr_susie_walk_left.yy",},},
     {"id":{"name":"spr_susie_walk_right","path":"sprites/spr_susie_walk_right/spr_susie_walk_right.yy",},},
     {"id":{"name":"spr_susie_walk_up","path":"sprites/spr_susie_walk_up/spr_susie_walk_up.yy",},},
+    {"id":{"name":"spr_toby_sleep","path":"sprites/spr_toby_sleep/spr_toby_sleep.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

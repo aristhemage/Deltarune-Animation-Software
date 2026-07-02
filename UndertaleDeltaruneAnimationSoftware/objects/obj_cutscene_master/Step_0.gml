@@ -260,6 +260,12 @@ if (cutscene_active) {
 		        current_action += 1; 
 		        
 		        break;
+				
+			// Create an actor
+			case ACTION.CREATE_ACTOR:
+				instance_create_depth(action._x, action._y, 1, obj_actor, {sprite_index: action.spawning_sprite, actor_id: action.actor_id, sprite_down: action.sprite_down, sprite_right: action.sprite_right, sprite_up: action.sprite_up, sprite_left: action.sprite_left, auto_animate_walk: action.auto_animate_walk, auto_animate_walk_int: action.auto_animate_walk});
+				current_action++;
+			break;
 			
 			//Increment variable value
 		    case ACTION.INC_VAR:
@@ -274,6 +280,7 @@ if (cutscene_active) {
 		    case ACTION.GOTO_ROOM:
 					room_goto(action.rm)
 				break;
+			
 			
         }
     } else {

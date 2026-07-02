@@ -132,3 +132,8 @@ if(char_index >= string_length(current_text)){
 	}
 }
 
+// For testing purpouses Enter kills the textbox prematurley to go to the next cutscene section
+if(keyboard_check_released(vk_enter)){
+	instance_destroy();	
+}
+

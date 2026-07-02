@@ -184,8 +184,20 @@ function action_increment_var(object,variable){
 	}
 }
 
-
-
+function action_create_actor(actor_id, _x, _y, spawning_sprite, sprite_down = spr_dummy, sprite_right = spr_dummy, sprite_up = spr_dummy, sprite_left = spr_dummy, auto_animate_walk = false){
+	return {
+		type: ACTION.CREATE_ACTOR,
+		actor_id,
+		 _x,
+		 _y,
+		spawning_sprite,
+		sprite_down,
+		sprite_right,
+		sprite_up,
+		sprite_left,
+		auto_animate_walk,
+	}
+}
 
 
 

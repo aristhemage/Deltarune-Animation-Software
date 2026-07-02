@@ -12,7 +12,9 @@ function cutscene(){
 				action_wait_for_object_destroy(obj_textbox),
 				action_actor_set_autowalk("Susie", true),
 				action_move_actor_nondirect("Susie",140,200,2,PREFER.HORZ),
-				action_destroy_actor("Susie")
+				action_destroy_actor("Susie"),
+				action_create_actor("Toby",490,240,spr_toby_sleep),
+				action_move(obj_camera_focus_dot,obj_camera_focus_dot.xstart + 150,obj_camera_focus_dot.ystart,2)
 				
 			]
 			

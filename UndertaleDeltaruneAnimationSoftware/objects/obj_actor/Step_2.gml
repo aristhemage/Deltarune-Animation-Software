@@ -24,5 +24,6 @@ if (auto_animate_walk){
 	}
 
 }
+depth = -y;
 
 

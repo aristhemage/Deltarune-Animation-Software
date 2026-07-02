@@ -20,6 +20,7 @@ function Enums(){
 		ACTOR_CHANGE_SPRITE,
 		PLAY_SOUND,
 		ACTOR_SET_AUTOWALK,
+		CREATE_ACTOR,
 	}
 	
 	enum PREFER {
