@@ -2,7 +2,7 @@
 if (!formatted_text_done){
     
 	// Wrap text and add the *
-    var max_width = 800-spacing*100;
+    var max_width = 750-spacing*100;
     var indent = string_width("* ") + 6;
 
 	// Loop through every message in the dialogue array
@@ -25,6 +25,13 @@ if (!formatted_text_done){
 					new_text += "\n  "; // Spaces for indentation
 					cur_width = 0;
 				}
+			}
+			
+			// Reset width if manual new line
+			if(string_char_at(text,char-1) == "\n"){
+				cur_width = 0;
+				// Add some spaces for indentation
+				new_text += "   ";
 			}
 		
 		}
