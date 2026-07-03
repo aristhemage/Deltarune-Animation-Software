@@ -1,0 +1,497 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Textbox System Documentation</title>
+<style>
+body{
+    font-family:Segoe UI,Arial,sans-serif;
+    background:#0f172a;
+    color:#e2e8f0;
+    margin:0;
+}
+header{
+    background:#1e293b;
+    padding:50px;
+    text-align:center;
+}
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+.section{
+    background:#1e293b;
+    margin:20px 0;
+    padding:25px;
+    border-radius:12px;
+}
+h1,h2,h3{
+    color:#38bdf8;
+}
+pre{
+    background:#020617;
+    padding:15px;
+    border-radius:8px;
+    overflow-x:auto;
+    border-left:4px solid #38bdf8;
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+th,td{
+    border:1px solid #334155;
+    padding:10px;
+}
+th{
+    background:#334155;
+}
+code{
+    background:#020617;
+    padding:2px 6px;
+    border-radius:4px;
+}
+.note{
+    background:#082f49;
+    border-left:5px solid #38bdf8;
+    padding:15px;
+    margin-top:10px;
+}
+a {
+	color: green;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Textbox System Documentation</h1>
+<p>Complete guide to action_display_text()</p>
+<a href = "CutsceneSystemDocumentation.html"> Click here to go back to main documentation </a>
+</header>
+
+<div class="container">
+
+<div class="section">
+<h2>Basic Usage</h2>
+
+<pre>
+action_display_text([
+    "Hello world!"
+]);
+</pre>
+
+<p>This creates a textbox using all default settings.</p>
+
+<div class="note">
+The text parameter is the only required parameter.
+Everything else is optional. This will make a basic normal text one.
+</div>
+</div>
+
+<div class="section">
+<h2>Full Function Parameters</h2>
+
+<table>
+    <tr>
+        <th>Parameter</th>
+        <th>Default</th>
+        <th>Description</th>
+    </tr>
+
+    <tr>
+        <td><code>text</code></td>
+        <td><b>Required</b></td>
+        <td>
+            Has to be an array, even if there is only one message.
+            Each entry in the array becomes a new page in the textbox.
+        </td>
+    </tr>
+
+    <tr>
+        <td><code>snd</code></td>
+        <td><code>snd_text</code></td>
+        <td>
+            The sound used for text blips while characters are being typed.
+            Defaults to the standard text sound. Character-specific sounds can
+            be used for different voices.
+        </td>
+    </tr>
+
+    <tr>
+        <td><code>on_bottom</code></td>
+        <td><code>false</code></td>
+        <td>
+            Determines whether the textbox appears at the bottom of the screen.
+            Useful when a character or important object would otherwise be covered
+            by the textbox.
+        </td>
+    </tr>
+
+    <tr>
+        <td><code>type_speed</code></td>
+        <td><code>1</code></td>
+        <td>
+            Controls how quickly characters appear on screen.
+            Higher values result in <i><b>slower</b></i> text scrolling.
+			Faster than 1 text is not implemented yet, but is planned
+        </td>
+    </tr>
+
+    <tr>
+        <td><code>next_message_timer</code></td>
+        <td><code>90</code></td>
+        <td>
+            Time in frames before automatically advancing to the next page.
+            Primarily used for automatic dialogue sequences. (60 frames = 1 second)
+        </td>
+    </tr>
+
+    <tr>
+        <td><code>has_face</code></td>
+        <td><code>false</code></td>
+        <td>
+            Enables the portrait system.
+            Must be set to <code>true</code> for portraits to appear. 
+        </td>
+    </tr>
+
+    <tr>
+        <td><code>face_sprite</code></td>
+        <td><code>-1</code></td>
+        <td>
+            The sprite containing all portrait expressions for the speaking
+            character. Use an array if multiple are used (For example Susie and Ralsei talking to one another). 
+			You must link the array to message number, so if one actor speaks twice, then the other actor speaks it would be <code>[actor_a_sprite, actor_a_sprite, actor_b_sprite]</code>
+        </td>
+    </tr>
+
+    <tr>
+        <td><code>face_id</code></td>
+        <td><code>-1</code></td>
+        <td>
+            Determines which portrait frame is displayed.
+            Can be a single number for all pages, or an array to change
+            expressions between pages. Same array rules from above apply here.
+        </td>
+    </tr>
+
+    <tr>
+        <td><code>spacing</code></td>
+        <td><code>2</code></td>
+        <td>
+            Additional spacing between characters.
+            Useful for custom fonts, improving readability, or those spooky long text moments. 
+			Same array rules from above apply here.
+        </td>
+    </tr>
+
+    <tr>
+        <td><code>change_sprite_when_talking</code></td>
+        <td><code>false</code></td>
+        <td>
+            When enabled, the speaker's overworld sprite will animate while
+            text is being typed. 
+			Same array rules from above apply here.
+        </td>
+    </tr>
+
+    <tr>
+        <td><code>actor</code></td>
+        <td><code>-1</code></td>
+        <td>
+            The actor ID of the character speaking.
+            Required when using talking animations.
+			Same array rules from above apply here.
+        </td>
+    </tr>
+
+    <tr>
+        <td><code>overworld_sprite_arr</code></td>
+        <td><code>-1</code></td>
+        <td>
+            Array of sprites used while the actor is talking.
+            The textbox system cycles through these sprites during dialogue.
+			Same array rules from above apply here.
+        </td>
+    </tr>
+
+    <tr>
+        <td><code>sprite_spd_arr</code></td>
+        <td><code>-1</code></td>
+        <td>
+            Animation speeds corresponding to each sprite in
+            <code>overworld_sprite_arr</code>.
+			Same array rules from above apply here.
+        </td>
+    </tr>
+
+</table>
+</div>
+
+<h2> Examples: </h2>
+
+<div class="section">
+<h2>text</h2>
+
+<p>Array of strings.</p>
+
+<pre>
+action_display_text([
+    "Page One",
+    "Page Two",
+    "Page Three"
+]);
+</pre>
+
+<table>
+<tr><th>Index</th><th>Page</th></tr>
+<tr><td>0</td><td>Page One</td></tr>
+<tr><td>1</td><td>Page Two</td></tr>
+<tr><td>2</td><td>Page Three</td></tr>
+</table>
+
+<p>Each array element becomes a new textbox page.</p>
+</div>
+
+<div class="section">
+<h2>snd</h2>
+
+<pre>
+action_display_text(
+    ["Hello"],
+    snd_text_susie
+);
+</pre>
+
+<p>The typing sound played as characters appear.</p>
+
+<table>
+<tr><th>Example</th><th>Purpose</th></tr>
+<tr><td>snd_text_susie</td><td>Susie voice</td></tr>
+<tr><td>snd_text_ralsei</td><td>Ralsei voice</td></tr>
+<tr><td>snd_text</td><td>Robot speech (Default)</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h2>type_speed</h2>
+
+<table>
+<tr><th>Value</th><th>Effect</th></tr>
+<tr><td>0</td><td>Instant</td></tr>
+<tr><td>1</td><td>Normal</td></tr>
+<tr><td>2</td><td>Slow</td></tr>
+<tr><td>4+</td><td>Very Slow</td></tr>
+</table>
+
+<pre>
+action_display_text(
+    ["Somewhat slow text"],
+    snd_text,
+    false,
+    2
+);
+</pre>
+</div>
+
+<div class="section">
+<h2>next_message_timer</h2>
+
+<p>Controls automatic page advancement delay.</p>
+
+<table>
+<tr><th>Frames</th><th>Seconds @ 60fps</th></tr>
+<tr><td>60</td><td>1 second</td></tr>
+<tr><td>120</td><td>2 seconds</td></tr>
+<tr><td>180</td><td>3 seconds</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h2>Portrait System</h2>
+
+<h3>has_face</h3>
+
+<pre>
+action_display_text(
+    ["Hello"],
+    snd_text_susie,
+    false,
+    1,
+    120,
+    true
+);
+</pre>
+
+<p>Enables portrait rendering.</p>
+
+<h3>face_sprite</h3>
+
+<pre>
+spr_face_susie
+</pre>
+
+<p>Sprite containing all portrait frames.</p>
+
+<h3>face_id</h3>
+
+<p>The most important portrait parameter.</p>
+
+<h4>Single Portrait</h4>
+
+<pre>
+action_display_text(
+    ["Hello"],
+    snd_text_susie,
+    false,
+    1,
+    120,
+    true,
+    spr_face_susie,
+    3
+);
+</pre>
+
+<p>Uses frame 3 of <code>spr_face_susie</code> for all pages.</p>
+
+<h4>Portrait Per Page</h4>
+
+<pre>
+action_display_text(
+    [
+        "Hello.",
+        "Wait...",
+        "WHAT?!"
+    ],
+    snd_text_susie,
+    false,
+    1,
+    120,
+    true,
+    spr_face_susie,
+    [10,4,6]
+);
+</pre>
+
+<table>
+<tr><th>Page</th><th>Portrait Frame</th></tr>
+<tr><td>Hello.</td><td>10</td></tr>
+<tr><td>Wait...</td><td>4</td></tr>
+<tr><td>WHAT?!</td><td>6</td></tr>
+</table>
+
+<div class="note">
+This allows portraits to change emotion during a conversation.
+</div>
+
+</div>
+
+<div class="section">
+<h3>pacing</h3>
+
+<pre>
+action_display_text(
+    ["Hello"],
+    snd_default_text,
+    false,
+    1,
+    120,
+    false,
+    -1,
+    -1,
+    5
+);
+</pre>
+
+<p>Controls additional spacing between letters. Not suggested to change from 2 unless you know what you are doing</p>
+</div>
+
+<div class="section">
+<h2>Talking Animation System</h2>
+
+<h3>change_sprite_when_talking</h3>
+
+<pre>
+true
+</pre>
+
+<p>When enabled, the overworld actor animates while speaking.</p>
+
+<h3>actor</h3>
+
+<pre>
+"Susie"
+</pre>
+
+<p>The actor_id to animate.</p>
+
+<h3>overworld_sprite_arr</h3>
+
+<pre>
+[
+    spr_susie_walk_right,
+    spr_susie_laugh,
+    spr_susie_walk_up
+]
+</pre>
+
+<p>Sprites cycled while talking.</p>
+
+<h3>sprite_spd_arr</h3>
+
+<pre>
+[
+    0, // Not walking
+    3, // For a very fast laugh idk
+    1, // Walking while standing still
+]
+</pre>
+
+<p>Animation speed for each talking sprite.</p>
+
+<h3>Full Animated Example</h3>
+
+<pre>
+action_display_text(
+[
+    "Hey Kris!",
+    "Check this out!"
+],
+snd_text_susie,
+false,
+1,
+120,
+true,
+spr_face_susie,
+[0,3],
+2,
+true,
+"Susie",
+[
+    spr_susie_walk_right,
+    spr_susie_laugh,
+    spr_susie_walk_up
+],
+[
+    0,
+    3,
+    1
+]
+);
+</pre>
+
+<div class="note">
+This example changes portrait expressions, plays a unique voice sound,
+and animates Susie's overworld sprite while she talks.
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

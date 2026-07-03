@@ -2,7 +2,7 @@
 if (!formatted_text_done){
     
 	// Wrap text and add the *
-    var max_width = 750-spacing*100;
+    var max_width = has_face ? 750-spacing*100 : 950-spacing*100 ;
     var indent = string_width("* ") + 6;
 
 	// Loop through every message in the dialogue array
