@@ -29,7 +29,7 @@
   "origin":0,
   "parent":{
     "name":"Darkworld",
-    "path":"folders/Sprites/Susie/Darkworld.yy",
+    "path":"folders/Sprites/Characters/Susie/Darkworld.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

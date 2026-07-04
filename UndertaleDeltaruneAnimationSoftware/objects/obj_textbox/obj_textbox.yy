@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_lightworld_textbox",
-    "path":"sprites/spr_lightworld_textbox/spr_lightworld_textbox.yy",
+    "name":"spr_darkworld_textbox",
+    "path":"sprites/spr_darkworld_textbox/spr_darkworld_textbox.yy",
   },
   "spriteMaskId":null,
   "visible":true,

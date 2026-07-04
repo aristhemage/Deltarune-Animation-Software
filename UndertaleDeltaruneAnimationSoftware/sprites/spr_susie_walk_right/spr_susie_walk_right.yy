@@ -29,7 +29,7 @@
   "origin":0,
   "parent":{
     "name":"Lightworld",
-    "path":"folders/Sprites/Susie/Lightworld.yy",
+    "path":"folders/Sprites/Characters/Susie/Lightworld.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

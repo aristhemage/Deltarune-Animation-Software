@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"Dummy",
-    "path":"folders/Sprites/Dummy.yy",
+    "path":"folders/Sprites/Characters/Dummy.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

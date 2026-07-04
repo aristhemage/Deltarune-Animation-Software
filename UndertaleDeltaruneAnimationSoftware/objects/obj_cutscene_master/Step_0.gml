@@ -154,7 +154,8 @@ if (cutscene_active) {
 					actor: action.actor,
 					overworld_sprite_arr: action.overworld_sprite_arr,
 					sprite_spd_arr: action.sprite_spd_arr,
-					on_bottom: action.on_bottom
+					on_bottom: action.on_bottom,
+					darkworld: action.darkworld
 				})
 				current_action++;
 			break;

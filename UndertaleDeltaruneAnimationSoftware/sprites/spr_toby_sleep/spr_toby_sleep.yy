@@ -27,7 +27,7 @@
   "origin":4,
   "parent":{
     "name":"Toby",
-    "path":"folders/Sprites/Toby.yy",
+    "path":"folders/Sprites/Characters/Toby.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

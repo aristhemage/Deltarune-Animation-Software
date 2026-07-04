@@ -1,12 +1,12 @@
 draw_set_font(fnt_text);
-
+var textbox_sprite = darkworld ? spr_darkworld_textbox : spr_lightworld_textbox; 
 var _x = 50;
-var _y = on_bottom ? camera_get_view_height(0)-sprite_get_height(spr_lightworld_textbox) - 10: 10;
+var _y = on_bottom ? camera_get_view_height(0)-sprite_get_height(textbox_sprite) - 10: 10;
 
 var offset_x = has_face ? sprite_get_width(is_array(face_sprite) ? face_sprite[message_no] : face_sprite) + 100 : 30;
 var offset_y = 40;
 
-draw_sprite(spr_lightworld_textbox, 0, _x, _y);
+draw_sprite(textbox_sprite, 0, _x, _y);
 
 if (has_face){	
 	

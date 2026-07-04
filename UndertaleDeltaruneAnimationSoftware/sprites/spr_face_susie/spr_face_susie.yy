@@ -86,7 +86,7 @@
   "origin":0,
   "parent":{
     "name":"Susie",
-    "path":"folders/Sprites/Susie.yy",
+    "path":"folders/Sprites/Characters/Susie.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

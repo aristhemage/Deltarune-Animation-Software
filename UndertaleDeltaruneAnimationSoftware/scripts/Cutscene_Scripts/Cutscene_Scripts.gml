@@ -73,7 +73,7 @@ function action_wait_for_var_less(object, variable, value) {
     };
 }
 
-function action_display_text(text, snd = snd_text, on_bottom = false, type_speed = 1, next_message_timer = 90, has_face = false, face_sprite = -1, face_id = -1, spacing = 2, change_sprite_when_talking = false, actor = -1, overworld_sprite_arr = -1, sprite_spd_arr = -1) {
+function action_display_text(text, snd = snd_text, on_bottom = false, type_speed = 1, next_message_timer = 90, has_face = false, face_sprite = -1, face_id = -1, spacing = 2, change_sprite_when_talking = false, actor = -1, overworld_sprite_arr = -1, sprite_spd_arr = -1, darkworld = false) {
     return {
         type: ACTION.DISPLAY_TEXT,
         text,
@@ -88,7 +88,8 @@ function action_display_text(text, snd = snd_text, on_bottom = false, type_speed
 		actor,
 		overworld_sprite_arr,
 		sprite_spd_arr,
-		on_bottom
+		on_bottom,
+		darkworld
     };
 }
 
