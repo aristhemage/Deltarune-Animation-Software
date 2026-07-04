@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"draw_text_spaced",
+  "%Name":"draw_text_special",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"draw_text_spaced",
+  "name":"draw_text_special",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

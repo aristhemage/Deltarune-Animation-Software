@@ -2,7 +2,7 @@
 if (!formatted_text_done){
     
 	// Wrap text and add the *
-    var max_width = has_face ? 750-spacing*100 : 950-spacing*100 ;
+    var max_width = has_face ? 750-spacing*75 : 950-spacing*75 ;
     var indent = string_width("* ") + 6;
 
 	// Loop through every message in the dialogue array
@@ -11,12 +11,20 @@ if (!formatted_text_done){
 		var new_text = "* ";
 		var char = 1;
 		var cur_width = 0;
+		var command = false;
 
 		// Go through the message one character at a time
 		for(var j = 0; j < string_length(text); j++){
+			var cur_char = string_char_at(text,char)
+			if(cur_char == "[") command = true; 
+			if(cur_char == "]") command = false; 
+			
+			new_text += cur_char;
+			
 
-			new_text += string_char_at(text,char);
-			cur_width += string_width(string_char_at(text,char));
+			
+			if(!command)
+				cur_width += string_width(cur_char);
 			char++;
 
 			// If we've gone past the allowed width, jump lines at the next space
@@ -60,12 +68,12 @@ var current_text = formatted_text[message_no];
 type_timer += 1;
 
 if (type_timer >= type_speed){
-	
+	var cur_char = string_char_at(current_text,char_index)
 	// Add a slight delay after punctuation
-	if(string_char_at(current_text,char_index) != "." && string_char_at(current_text,char_index) != "?" && string_char_at(current_text,char_index) != "!"){
+	if(cur_char != "." && cur_char != "?" && cur_char != "!"){
 
 		// Small pause for commas
-		if(string_char_at(current_text,char_index) != ","){
+		if(cur_char != ","){
 			type_timer = 0;
 		}else{
 			type_timer = -2;	

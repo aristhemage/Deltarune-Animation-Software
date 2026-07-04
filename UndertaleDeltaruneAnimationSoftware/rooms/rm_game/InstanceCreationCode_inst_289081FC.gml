@@ -2,10 +2,10 @@ function cutscene(){
 	with(obj_cutscene_master){
 		var actions = [
 				action_wait_time(1),
-				action_move_actor_nondirect("Susie",obj_checkpoint_a.x,obj_checkpoint_a.y,2,PREFER.VERT),
-				action_display_text(["Woah I cant beleive that over there is the true identiy of the knight!"]),
-				action_wait_for_object_destroy(obj_textbox),
-				action_display_text(["Woah I cant beleive that over there is the true identiy of the knight!"],snd_text_susie,false,1,120,true,spr_face_susie,8,2,false),
+				//action_move_actor_nondirect("Susie",obj_checkpoint_a.x,obj_checkpoint_a.y,2,PREFER.VERT),
+				//action_display_text(["Default text message!"]),
+				//action_wait_for_object_destroy(obj_textbox),
+				action_display_text(["[c_pink]Freedom [c_white] is just a [c_green]penumbra phantasm[c_white] for[c_red] world revolving [c_yellow]big shots! "],snd_text_susie,false,1,120,true,spr_face_susie,8,4,false),
 				action_wait_for_object_destroy(obj_textbox),
 				action_actor_change_sprite("Susie",spr_susie_laugh),
 				action_play_sound(snd_susie_laugh,true),
