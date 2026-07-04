@@ -32,6 +32,18 @@ function action_move_actor_nondirect(actor_id, target_x, target_y, spd, prefer) 
     };
 }
 
+// Show an exclimation mark for a little bit
+function action_actor_show_exclamation(actor,exclamation_timer = 60,wait_until_finish = true, play_sound = true){
+	return{
+		type: ACTION.EXCLAMATION,
+		actor,
+		exclamation_timer,
+		wait_until_finish,
+		play_sound,
+		sound_instance : undefined
+	}
+}
+
 function action_wait_for_object(obj) {
     return {
         type: ACTION.WAIT_FOR_OBJECT,
@@ -124,7 +136,7 @@ function action_wait_for_object_destroy(obj) {
     };
 }
 
-function action_actor_change_sprite(actor, sprite, spd = 1){
+function action_actor_change_sprite(actor, sprite, spd = 0){
 	return {
 		type: ACTION.ACTOR_CHANGE_SPRITE,
 		actor,
@@ -132,7 +144,13 @@ function action_actor_change_sprite(actor, sprite, spd = 1){
 		spd
 	}
 }
-
+function action_actor_wait_for_animation(actor, sprite){
+	return {
+		type: ACTION.ACTOR_WAIT_FOR_ANIMATION,
+		actor,
+		sprite
+	}
+}
 function action_play_sound(snd, wait_until_finish = false){
 	return {
 		type: ACTION.PLAY_SOUND,

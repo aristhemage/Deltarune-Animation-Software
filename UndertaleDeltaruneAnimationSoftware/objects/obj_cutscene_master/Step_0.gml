@@ -190,6 +190,14 @@ if (cutscene_active) {
                 wait_timer = action.time;
                 break;
 			
+			// Wait for an actor to finish their animation
+			case ACTION.ACTOR_WAIT_FOR_ANIMATION:
+					var _actor = get_actor_by_id(action.actor);
+					if(_actor.image_index >= _actor.image_number-1){
+						current_action++;	
+					}
+				break;
+			
 			//Wait for variable to be a certain value
             case ACTION.WAIT_FOR_VAR:
                 if (variable_instance_get(action.object, action.variable) == action.value) {
@@ -237,7 +245,30 @@ if (cutscene_active) {
 					current_action++;
 				}
 			break;
+			
+			case ACTION.EXCLAMATION:
+				var _actor =  get_actor_by_id(action.actor);
+				// Set the timer and start exclaming
+				if(_actor.exclamation_timer == -99){
+					_actor.exclamation_timer = action.exclamation_timer;
+					_actor.show_exclamation = true;
+				}
 				
+				// Play da sound
+				if(action.play_sound){
+					if (is_undefined(action.sound_instance)){
+						action.sound_instance = audio_play_sound(snd_suprise, 1, false);
+					}	
+				}
+				
+				// If waiting to finish (Most cases)
+				if (action.wait_until_finish){
+					if (!_actor.show_exclamation){
+						current_action++;
+					}
+				}
+
+			break;
 			//Fade out an object, MUST HAVE THE FADE VARIABLE
 			case ACTION.FADE_OBJECT:
 		        if (instance_exists(action.obj)) {

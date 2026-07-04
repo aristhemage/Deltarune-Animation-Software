@@ -27,3 +27,9 @@ if (auto_animate_walk){
 depth = -y;
 
 
+if(show_exclamation){
+	exclamation_timer--;
+	if(exclamation_timer <= 0){
+		show_exclamation = false;
+	}
+}

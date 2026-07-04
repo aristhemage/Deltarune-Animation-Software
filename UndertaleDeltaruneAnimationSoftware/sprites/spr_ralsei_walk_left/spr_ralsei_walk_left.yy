@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Ralsei",
-    "path":"folders/Sprites/Characters/Ralsei.yy",
+    "name":"Hatless",
+    "path":"folders/Sprites/Characters/Ralsei/Hatless.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
