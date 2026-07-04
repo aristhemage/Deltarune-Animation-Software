@@ -69,6 +69,16 @@ type_timer += 1;
 
 if (type_timer >= type_speed){
 	var cur_char = string_char_at(current_text,char_index)
+	var command = false;
+	if(cur_char == "["){
+		command = true;
+	}
+	
+	while(command){
+		char_index++
+		cur_char = string_char_at(current_text,char_index)
+		if(cur_char == "]"){command = false}
+	}
 	// Add a slight delay after punctuation
 	if(cur_char != "." && cur_char != "?" && cur_char != "!"){
 

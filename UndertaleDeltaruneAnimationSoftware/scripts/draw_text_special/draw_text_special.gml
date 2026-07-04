@@ -1,8 +1,12 @@
 function draw_text_special(_x, _y, _text, _spacing){
     var xx = _x;
     var yy = _y;
+	var x_offset = 0;
+	var y_offset = 0;
 	var command = false;
 	var command_no = 0;
+	var shaking = false;
+	var shaking_intensity = 0
 
     for (var i = 1; i <= string_length(_text); i++){
         var ch = string_char_at(_text, i);
@@ -60,6 +64,19 @@ function draw_text_special(_x, _y, _text, _spacing){
 				    break;
 				}
 			}
+			
+			// Shaking
+			if(string_copy(command_text,1,2) == "s_"){
+				shaking = true;
+				var value = string_delete(command_text, 1, 2)
+				if(value == "0"){shaking = false};
+				shaking_intensity = real(value)
+			}
+			// End special effects
+			if(string_copy(command_text,1,1) == "e"){
+				shaking = false;
+				draw_set_colour(c_white);
+			}
 		    continue;
 		}
 		
@@ -70,8 +87,15 @@ function draw_text_special(_x, _y, _text, _spacing){
 			
 		}
 		
-
-		draw_text(xx, yy, ch);
+		if (shaking){
+			    x_offset = random_range(-shaking_intensity, shaking_intensity);
+			    y_offset = random_range(-shaking_intensity, shaking_intensity);
+			}
+			else{
+			    x_offset = 0;
+			    y_offset = 0;
+			}
+		draw_text(xx + x_offset, yy + y_offset, ch);
         xx += string_width(ch) + _spacing;
     }
 	draw_set_colour(c_white);

@@ -5,7 +5,7 @@ function cutscene(){
 				//action_move_actor_nondirect("Susie",obj_checkpoint_a.x,obj_checkpoint_a.y,2,PREFER.VERT),
 				//action_display_text(["Default text message!"]),
 				//action_wait_for_object_destroy(obj_textbox),
-				action_display_text(["[c_pink]Freedom [c_white] is just a [c_green]penumbra phantasm[c_white] for[c_red] world revolving [c_yellow]big shots! "],snd_text_susie,false,1,120,true,spr_face_susie,8,4,false),
+				action_display_text(["[c_pink]Freedom [c_white][s_4]is just a[e][c_green] penumbra phantasm[c_white] for [c_yellow]big shots! "],snd_text_susie,false,1,120,true,spr_face_susie,8,4,false),
 				action_wait_for_object_destroy(obj_textbox),
 				action_actor_change_sprite("Susie",spr_susie_laugh),
 				action_play_sound(snd_susie_laugh,true),
