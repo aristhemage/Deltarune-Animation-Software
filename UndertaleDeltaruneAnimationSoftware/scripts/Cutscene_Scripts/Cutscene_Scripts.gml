@@ -170,12 +170,24 @@ function action_actor_set_autowalk(actor, state){
 	}
 }
 
-function action_fade_object(obj) {
+function action_fade_object(obj,fade_spd = 0.05,wait_until_finish = false) {
     return {
         type: ACTION.FADE_OBJECT,
-        obj
+        obj,
+		fade_spd,
+		wait_until_finish
     };
 }
+
+function action_fade_actor(actor,fade_spd = 0.05, wait_until_finish = false) {
+    return {
+        type: ACTION.FADE_ACTOR,
+        actor,
+		fade_spd,
+		wait_until_finish
+    };
+}
+
 
 function action_goto_room(rm) {
     return {
@@ -201,7 +213,7 @@ function action_increment_var(object, variable){
 	}
 }
 
-function action_create_actor(actor_id, _x, _y, spawning_sprite, sprite_down = spr_dummy, sprite_right = spr_dummy, sprite_up = spr_dummy, sprite_left = spr_dummy, auto_animate_walk = false){
+function action_create_actor(actor_id, _x, _y, spawning_sprite, sprite_down = spr_dummy, sprite_right = spr_dummy, sprite_up = spr_dummy, sprite_left = spr_dummy, auto_animate_walk = false, fade_in = true, fade_spd = 0.05){
 	return {
 		type: ACTION.CREATE_ACTOR,
 		actor_id,
@@ -213,8 +225,32 @@ function action_create_actor(actor_id, _x, _y, spawning_sprite, sprite_down = sp
 		sprite_up,
 		sprite_left,
 		auto_animate_walk,
+		fade_in,
+		fade_spd
 	}
 }
+
+function action_fade_out(fade_spd = 0.05, dep = -9999){
+	return {
+		type: ACTION.FADE_OUT,
+		fade_spd,
+		dep
+		
+	}
+}
+
+function action_actor_set_alpha(actor, alpha,fade_to = false,fade_spd = 0.05,wait_until_finish = true){
+	return {
+		type: ACTION.ACTOR_SET_ALPHA,
+		actor,
+		alpha,
+		fade_to,
+		fade_spd,	
+		wait_until_finish,
+	}
+}
+
+
 
 function start_cutscene(actions) {
 	if(!cutscene_active){

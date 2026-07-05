@@ -273,15 +273,37 @@ if (cutscene_active) {
 				}
 
 			break;
-			//Fade out an object, MUST HAVE THE FADE VARIABLE
+			//Fade out an object
 			case ACTION.FADE_OBJECT:
 		        if (instance_exists(action.obj)) {
-		            action.obj.fade = true; 
+		            action.obj.image_alpha -= action.fade_spd
+					if(action.obj.image_alpha <= 0){
+						instance_destroy(action.obj)	
+					}
 		        }
-		        current_action += 1; 
+				
+				if(action.wait_until_finish){
+					if(!instance_exists(action.obj))
+						current_action++; 
+				}else{
+					current_action++;	
+				}
 		        break;
 				
+			//Fade out an actor
+			case ACTION.FADE_ACTOR:
+				var _actor =  get_actor_by_id(action.actor);
 				
+		        _actor.fade = true;
+				_actor.fade_spd = action.fade_spd
+					
+				if(action.wait_until_finish){
+					if(!instance_exists(_actor))
+						current_action++; 
+				}else{
+					current_action++;	
+				}
+		        break;
 			//Wait for an object to be distroyed
 		    case ACTION.WAIT_FOR_OBJECT_DESTROY:
 		        if (!instance_exists(action.obj)) {
@@ -300,7 +322,7 @@ if (cutscene_active) {
 				
 			// Create an actor
 			case ACTION.CREATE_ACTOR:
-				instance_create_depth(action._x, action._y, 1, obj_actor, {sprite_index: action.spawning_sprite, actor_id: action.actor_id, sprite_down: action.sprite_down, sprite_right: action.sprite_right, sprite_up: action.sprite_up, sprite_left: action.sprite_left, auto_animate_walk: action.auto_animate_walk, auto_animate_walk_int: action.auto_animate_walk});
+				instance_create_depth(action._x, action._y, 1, obj_actor, {sprite_index: action.spawning_sprite, actor_id: action.actor_id, sprite_down: action.sprite_down, sprite_right: action.sprite_right, sprite_up: action.sprite_up, sprite_left: action.sprite_left, auto_animate_walk: action.auto_animate_walk, auto_animate_walk_int: action.auto_animate_walk, fade_in: action.fade_in, fade_spd: action.fade_spd});
 				current_action++;
 			break;
 			
@@ -311,6 +333,38 @@ if (cutscene_active) {
 		        current_action += 1; 
 		        
 		        break;			
+			
+			// Fade out room
+			case ACTION.FADE_OUT:
+				obj_fade.fade_out = true;
+				obj_fade.fade_spd = action.fade_spd;
+				obj_fade.depth = action.dep;
+				if(obj_fade.alpha >= 1){
+					current_action++;	
+				}
+			break;
+			
+			// Fade out room
+			case ACTION.ACTOR_SET_ALPHA:
+				var _actor =  get_actor_by_id(action.actor);
+				
+				if(action.fade_to){
+					_actor.fade_to = true;
+					_actor.fade_spd = action.fade_spd
+					_actor.alpha_goal = action.alpha
+				}else{
+					_actor.alpha = action.alpha
+				}
+				
+				if(action.wait_until_finish){
+					if(_actor.alpha == action.alpha){
+						current_action++	
+					}
+				}else{
+					current_action++;	
+				}
+				
+			break;
 				
 			//Go to another room, SHOULD BE LAST IN CUTSCENE, 
 			//SET UP NEW CUTSCENE IN OTHER ROOM

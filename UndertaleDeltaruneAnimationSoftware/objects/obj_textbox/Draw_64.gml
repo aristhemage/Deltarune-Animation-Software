@@ -1,4 +1,5 @@
 draw_set_font(fnt_text);
+draw_set_colour(c_white)
 var textbox_sprite = darkworld ? spr_darkworld_textbox : spr_lightworld_textbox; 
 var _x = 50;
 var _y = on_bottom ? camera_get_view_height(0)-sprite_get_height(textbox_sprite) - 10: 10;

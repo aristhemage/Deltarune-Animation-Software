@@ -11,3 +11,5 @@ view_camera[0] = cam;
 
 // Set window size
 window_set_size(1280, 960);
+
+created = false;

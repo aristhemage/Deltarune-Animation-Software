@@ -33,3 +33,37 @@ if(show_exclamation){
 		show_exclamation = false;
 	}
 }
+
+if(fade){
+	if(image_alpha > 0){
+		image_alpha -=fade_spd;	
+	}else{
+		instance_destroy();	
+	}
+}
+
+if(fade_in){
+	if(image_alpha < 1){
+		image_alpha += fade_spd;	
+	}else{
+		image_alpha = 1;
+		fade_in = false;
+	}
+}else{
+	if(!fade){
+		if(fade_to){
+			if(image_alpha > alpha_goal){
+				image_alpha -= fade_spd;	
+			}else{
+				image_alpha += fade_spd;	
+			}
+			
+			if (abs(image_alpha - alpha_goal) < 0.01){
+				fade_to = false;
+				alpha = alpha_goal;
+			}
+		}else{
+			image_alpha = alpha;	
+		}
+	}
+}

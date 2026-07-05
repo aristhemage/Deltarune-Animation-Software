@@ -3,8 +3,9 @@ function cutscene(){
 		var actions = [
 				action_wait_time(0.25),
 				action_play_sound(sng_my_castle_town),
-				action_move_actor_direct("Susie",obj_checkpoint_a.x,obj_checkpoint_a.y,2,PREFER.VERT),
+				action_move_actor_direct("Susie",obj_checkpoint_a.x,obj_checkpoint_a.y,2),
 				action_actor_change_sprite("Susie",spr_susie_walk_up_dw,0),
+				action_actor_set_alpha("Susie",0.5,true,0.01,false),
 				action_display_text(["Home sweet home, just as I \nremember it.", "Man, I cant wait for Noelle to show up."],snd_text_susie,false,1,100,true,spr_face_susie,[61,51],1,false,,,,true),
 				action_wait_for_object_destroy(obj_textbox),
 				action_actor_set_autowalk("Susie", true),
@@ -18,7 +19,7 @@ function cutscene(){
 				action_actor_change_sprite("Ralsei",spr_ralsei_walk_down,0),
 				action_actor_set_autowalk("Ralsei",true),
 				action_move_actor_nondirect("Ralsei",obj_checkpoint_c.x,obj_checkpoint_c.y,2,PREFER.HORZ),
-				action_destroy_actor("Ralsei"),
+				action_fade_actor("Ralsei",0.05),
 				action_play_sound(snd_doorclose),
 				action_wait_time(1.5),
 				action_play_sound(snd_dooropen),
@@ -47,7 +48,8 @@ function cutscene(){
 				action_actor_change_sprite("Susie",spr_susie_walk_up_dw),
 				action_actor_change_sprite("Ralsei",spr_ralsei_dress),
 				action_display_text(["Hehe, I will be your 'Nerd' for now.", "Now, let's get ready\nfor Noelle!"],snd_text_ral,true,1,100,true,spr_face_ralsei,[2,4],1,false,,,,true),	
-
+				action_wait_for_object_destroy(obj_textbox),
+				action_fade_out(0.05),
 				
 				
 				

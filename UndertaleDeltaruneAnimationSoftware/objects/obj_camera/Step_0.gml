@@ -9,6 +9,14 @@ if(instance_exists(obj_camera_focus)){
 	var cam_x = camera_get_view_x(cam);
 	var cam_y = camera_get_view_y(cam);
 
+	// If not created yet
+	if(!created){
+		camera_set_view_pos(cam,target_x,target_y);
+		cam_x = camera_get_view_x(cam);
+		cam_y = camera_get_view_y(cam);
+		created = true;
+	}
+	// Once created
 	camera_set_view_pos(
 		cam,
 		lerp(cam_x, target_x, 0.1),
