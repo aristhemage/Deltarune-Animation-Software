@@ -136,12 +136,14 @@ function action_wait_for_object_destroy(obj) {
     };
 }
 
-function action_actor_change_sprite(actor, sprite, spd = 0){
+function action_actor_change_sprite(actor, sprite, spd = 0, x_scale = 1, y_scale = 1){
 	return {
 		type: ACTION.ACTOR_CHANGE_SPRITE,
 		actor,
 		sprite,
-		spd
+		spd,
+		x_scale,
+		y_scale
 	}
 }
 function action_actor_wait_for_animation(actor, sprite){

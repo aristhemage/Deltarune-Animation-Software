@@ -103,12 +103,14 @@ if (cutscene_active) {
 			        }
 			    }
 			}
+			
 				
 				
 			break;
 
 		//Move an actor directly, continue cutscene when object reaches destination
 			case ACTION.MOVE_ACTOR_DIRECT:
+			
 				var actor =  get_actor_by_id(action.actor);
 			    var tx = action.target_x;
 			    var ty = action.target_y;
@@ -173,6 +175,8 @@ if (cutscene_active) {
 				_actor.sprite_index = action.sprite
 				_actor.image_speed = action.spd;
 				_actor.image_index = 0;
+				_actor.image_xscale = action.x_scale;
+				_actor.image_yscale = action.y_scale;
 				_actor.auto_animate_walk = false;
 				current_action++;
 			break;
