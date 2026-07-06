@@ -12,6 +12,7 @@ if (!formatted_text_done){
 		var char = 1;
 		var cur_width = 0;
 		var command = false;
+		var char_over = 0;
 
 		// Go through the message one character at a time
 		for(var j = 0; j < string_length(text); j++){
@@ -29,9 +30,17 @@ if (!formatted_text_done){
 
 			// If we've gone past the allowed width, jump lines at the next space
 			if(cur_width > max_width){
+				char_over++
 				if(string_char_at(text,char) == " "){
 					new_text += "\n  "; // Spaces for indentation
 					cur_width = 0;
+					char_over = 0;
+				}
+				
+				if(char_over == 3){
+					new_text += "-\n   " // Cut off the word, new line
+					cur_width = 0;
+					char_over = 0;
 				}
 			}
 			
