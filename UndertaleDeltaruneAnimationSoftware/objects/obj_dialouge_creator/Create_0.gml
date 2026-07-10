@@ -12,5 +12,12 @@ delete_int_delay = 45;
 delete_one_key = false;
 delete_delay = 0;
 
+lines = [""];
+line_no = 0;
+lastpos = 0;
+line_width = 0;
+
 blink_timer = 45;
 blink_visible = false;
+
+capture_lines = false;

@@ -35,6 +35,37 @@ if (cutscene_active) {
 			    }
 			break;
 			
+			case ACTION.MOVE_CHECKPOINT:
+					var obj = action.obj;
+					var checkpoint = get_checkpoint_by_id(action.checkpoint_id)
+				    var tx = checkpoint.x;
+				    var ty = checkpoint.y;
+				    var spd = action.spd;
+
+				    // Make sure obj is valid
+				    if (!instance_exists(obj)) {
+				        show_message("MOVE ERROR: Target object doesn't exist. If you see this please contact\nThe developer ArisTheMage over Discord.");
+				        current_action += 1;
+				        break;
+				    }
+
+				    // Get direction and distance
+				    var dx = tx - obj.x;
+				    var dy = ty - obj.y;
+				    var dist = point_distance(obj.x, obj.y, tx, ty);
+
+				    if (dist > spd) {
+				        // Move toward target
+				        obj.x += spd * (dx / dist);
+				        obj.y += spd * (dy / dist);
+				    } else {
+				        // Snap to position and move to next action
+				        obj.x = tx;
+				        obj.y = ty;
+				        current_action += 1;
+				    }
+			break;
+			
 			//Move an actor nondirectly, continue cutscene when object reaches destination
 			case ACTION.MOVE_ACTOR_NONDIRECT:
 				var actor =  get_actor_by_id(action.actor);
@@ -108,12 +139,114 @@ if (cutscene_active) {
 				
 			break;
 
+		case ACTION.MOVE_ACTOR_NONDIRECT_CHECKPOINT:
+				var actor =  get_actor_by_id(action.actor);
+				var checkpoint = get_checkpoint_by_id(action.checkpoint_id)
+			    var tx = checkpoint.x;
+			    var ty = checkpoint.y;
+			    var spd = action.spd;
+
+			    // Make sure obj is valid
+			    if (!instance_exists(obj_actor)) {
+			        show_message("MOVE ERROR: Target object doesn't exist. If you see this please contact\nThe developer ArisTheMage over Discord.");
+			        current_action += 1;
+			        break;
+			    }
+
+			    //Get preference
+				if(action.prefer == PREFER.HORZ){
+					// Move Left/Right First
+					var dx = tx - actor.x;
+					var dist = point_distance(actor.x, actor.y, tx, actor.y);
+					
+					if (dist > spd) {
+				        // Move toward target
+				        actor.x += spd * (dx / dist);
+				    } else {
+				        // Snap to position and move up/down
+				        actor.x = tx;
+						
+						var dy = ty - actor.y;
+						var dist = point_distance(actor.x, actor.y, actor.x, ty);
+						
+						if (dist > spd) {
+					        // Move toward target
+					        actor.y += spd * (dy / dist);
+						}else{
+							// Done
+							actor.y = ty;
+							current_action++;
+						}
+						
+						
+				    }
+					
+					
+				}else{
+				// Move Up/Down First
+				var dy = ty - actor.y;
+				var dist = point_distance(actor.x, actor.y, actor.x, ty);
+
+				if (dist > spd){
+			        // Move toward target
+			        actor.y += spd * (dy / dist);
+			    }else{
+			        // Snap to position and move left/right
+			        actor.y = ty;
+
+			        var dx = tx - actor.x;
+			        var dist = point_distance(actor.x, actor.y, tx, actor.y);
+
+			        if (dist > spd){
+			            // Move toward target
+			            actor.x += spd * (dx / dist);
+			        }else{
+			            // Done
+			            actor.x = tx;
+			            current_action++;
+			        }
+			    }
+			}
+			
+			break;
 		//Move an actor directly, continue cutscene when object reaches destination
 			case ACTION.MOVE_ACTOR_DIRECT:
 			
 				var actor =  get_actor_by_id(action.actor);
 			    var tx = action.target_x;
 			    var ty = action.target_y;
+			    var spd = action.spd;
+
+			    // Make sure obj is valid
+			    if (!instance_exists(obj_actor)) {
+			        show_message("MOVE ERROR: Target object doesn't exist. If you see this please contact\nThe developer ArisTheMage over Discord.");
+			        current_action += 1;
+			        break;
+			    }
+
+			    // Get direction and distance
+			    var dx = tx - actor.x;
+			    var dy = ty - actor.y;
+			    var dist = point_distance(actor.x, actor.y, tx, ty);
+
+			    if (dist > spd) {
+			        // Move toward target
+			        actor.x += spd * (dx / dist);
+			        actor.y += spd * (dy / dist);
+			    } else {
+			        // Snap to position and move to next action
+			        actor.x = tx;
+			        actor.y = ty;
+			        current_action += 1;
+			    }
+			break;
+			
+				case ACTION.MOVE_ACTOR_DIRECT_CHECKPOINT:
+			
+				var actor =  get_actor_by_id(action.actor);
+				var checkpoint = get_checkpoint_by_id(action.checkpoint_id)
+			    var tx = checkpoint.x;
+			    var ty = checkpoint.y;
 			    var spd = action.spd;
 
 			    // Make sure obj is valid
@@ -323,6 +456,12 @@ if (cutscene_active) {
 			// Create an actor
 			case ACTION.CREATE_ACTOR:
 				instance_create_depth(action._x, action._y, 1, obj_actor, {sprite_index: action.spawning_sprite, actor_id: action.actor_id, sprite_down: action.sprite_down, sprite_right: action.sprite_right, sprite_up: action.sprite_up, sprite_left: action.sprite_left, auto_animate_walk: action.auto_animate_walk, auto_animate_walk_int: action.auto_animate_walk, fade_in: action.fade_in, fade_spd: action.fade_spd});
+				current_action++;
+			break;
+			
+			case ACTION.CREATE_ACTOR_CHECKPOINT:
+				var checkpoint = get_checkpoint_by_id(action.checkpoint_id)
+				instance_create_depth(checkpoint.x, checkpoint.y, 1, obj_actor, {sprite_index: action.spawning_sprite, actor_id: action.actor_id, sprite_down: action.sprite_down, sprite_right: action.sprite_right, sprite_up: action.sprite_up, sprite_left: action.sprite_left, auto_animate_walk: action.auto_animate_walk, auto_animate_walk_int: action.auto_animate_walk, fade_in: action.fade_in, fade_spd: action.fade_spd});
 				current_action++;
 			break;
 			

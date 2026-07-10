@@ -9,6 +9,17 @@ function action_move(obj, target_x, target_y, spd) {
     };
 }
 
+// Move an object to a checkpoint
+function action_move_checkpoint(obj, checkpoint_id, spd) {
+    return {
+        type: ACTION.MOVE_CHECKPOINT,
+        obj,
+        checkpoint_id,
+        spd
+    };
+}
+
+
 // Move an actor directly to space
 function action_move_actor_direct(actor_id, target_x, target_y, spd) {
     return {
@@ -20,6 +31,16 @@ function action_move_actor_direct(actor_id, target_x, target_y, spd) {
     };
 }
 
+// Move an actor directly to checkpoint
+function action_move_actor_direct_checkpoint(actor_id, checkpoint_id, spd) {
+    return {
+        type: ACTION.MOVE_ACTOR_DIRECT_CHECKPOINT,
+        actor: actor_id,
+        checkpoint_id,
+        spd
+    };
+}
+
 // Move an actor starting by moving up/down or left/right, then doing the other after.
 function action_move_actor_nondirect(actor_id, target_x, target_y, spd, prefer) {
     return {
@@ -27,6 +48,17 @@ function action_move_actor_nondirect(actor_id, target_x, target_y, spd, prefer) 
         actor: actor_id,
         target_x,
         target_y,
+        spd,
+		prefer
+    };
+}
+
+// Same as above but to a checkpoint
+function action_move_actor_nondirect_checkpoint(actor_id, checkpoint_id, spd, prefer) {
+    return {
+        type: ACTION.MOVE_ACTOR_NONDIRECT_CHECKPOINT,
+        actor: actor_id,
+        checkpoint_id,
         spd,
 		prefer
     };
@@ -219,6 +251,22 @@ function action_create_actor(actor_id, _x, _y, spawning_sprite, sprite_down = sp
 		actor_id,
 		_x,
 		_y,
+		spawning_sprite,
+		sprite_down,
+		sprite_right,
+		sprite_up,
+		sprite_left,
+		auto_animate_walk,
+		fade_in,
+		fade_spd
+	}
+}
+
+function action_create_actor_checkpoint(actor_id, checkpoint_id, spawning_sprite, sprite_down = spr_dummy, sprite_right = spr_dummy, sprite_up = spr_dummy, sprite_left = spr_dummy, auto_animate_walk = false, fade_in = true, fade_spd = 0.05){
+	return {
+		type: ACTION.CREATE_ACTOR_CHECKPOINT,
+		actor_id,
+		checkpoint_id,
 		spawning_sprite,
 		sprite_down,
 		sprite_right,

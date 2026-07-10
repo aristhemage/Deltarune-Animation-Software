@@ -56,15 +56,19 @@ if (has_face){
 draw_text_special(_x + offset_x, _y + offset_y, formatted_text[0],spacing);
 
 draw_set_colour(c_white)
-var caret_x = _x + offset_x + 60 + string_width(string_copy(txt[0], 1, current_pos)) + string_length(txt[0]);
 
 
-blink_timer--;
-if(blink_visible){
-	draw_line_width(caret_x, _y +45,caret_x,_y + 100,4);
-}
+// BROKEN
 
-if(blink_timer <= 0){
-	blink_timer = 45;	
-	blink_visible = !blink_visible
-}
+//var caret_x = _x + offset_x + 60 + string_width(string_copy(txt[0], 1, current_pos)) + string_length(txt[0]);
+
+
+//blink_timer--;
+//if(blink_visible){
+//	draw_line_width(caret_x, _y +45,caret_x,_y + 100,4);
+//}
+
+//if(blink_timer <= 0){
+//	blink_timer = 45;	
+//	blink_visible = !blink_visible
+//}

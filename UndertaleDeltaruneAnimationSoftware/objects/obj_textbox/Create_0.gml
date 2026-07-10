@@ -10,3 +10,4 @@ formatted_text = [];
 formatted_text_done = false;
 
 audio_play = 0;
+

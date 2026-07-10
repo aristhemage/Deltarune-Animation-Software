@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"get_checkpoint_by_id",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_checkpoint_by_id",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
