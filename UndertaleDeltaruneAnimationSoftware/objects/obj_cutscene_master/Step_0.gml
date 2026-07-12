@@ -505,6 +505,31 @@ if (cutscene_active) {
 				
 			break;
 				
+			// Have an actor follow another actor 
+			case ACTION.FOLLOW_ACTOR:
+				var follower = get_actor_by_id(action.follower);
+				var leader = get_actor_by_id(action.leader);
+				follower.following = leader;
+				follower.spacing = action.spacing;
+				follower.auto_animate_walk = action.auto_animate_walk;
+				follower.follow_actor = true
+				current_action++;
+			break;
+			
+			// Manually control the actor like a player
+			case ACTION.MANUAL_OVERRIDE:
+				var actor = get_actor_by_id(action.actor);
+				actor.manual_override = action.override;
+				current_action++;
+			break;
+			
+			
+			// Have the camera follow an actor
+			case ACTION.CAMERA_FOLLOW_ACTOR:
+				var actor = get_actor_by_id(action.actor);
+				obj_camera_focus.focus = actor;
+				current_action++;
+			break;
 			//Go to another room, SHOULD BE LAST IN CUTSCENE, 
 			//SET UP NEW CUTSCENE IN OTHER ROOM
 		    case ACTION.GOTO_ROOM:

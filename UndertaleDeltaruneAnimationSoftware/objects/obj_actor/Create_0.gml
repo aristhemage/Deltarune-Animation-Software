@@ -7,3 +7,10 @@ alpha = 1;
 
 alpha_goal = 1;
 fade_to = false;
+
+// Used in actor_follow_actor function
+follow_actor = false 
+pos_history = [];
+max_history = 120;
+
+manual_override = false;

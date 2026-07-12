@@ -1,3 +1,37 @@
+// Manually walk
+if(manual_override){
+	if(keyboard_check(vk_up) || keyboard_check(ord("W"))){
+		y -= 4;	
+	}
+
+	if (keyboard_check(vk_down) || keyboard_check(ord("S"))) {
+	    y += 4;
+	}
+
+	if (keyboard_check(vk_left) || keyboard_check(ord("A"))) {
+	    x -= 4;
+	}
+
+	if (keyboard_check(vk_right) || keyboard_check(ord("D"))) {
+	    x += 4;
+	}
+}
+
+// Following another actor
+if(follow_actor){
+	// Calculate this follower's index inside the leaders's history array
+	if (array_length(following.pos_history) > spacing) {
+        
+	    // Grab the historical target coordinates
+	    var _target_pos = following.pos_history[spacing];
+        
+	    // Instantly snap to the historical coordinate
+	    x = _target_pos.x;
+	    y = _target_pos.y;
+	}
+
+}
+
 // Auto Sprite
 if (auto_animate_walk){
 	if(x != xprevious || y != yprevious){
@@ -26,7 +60,7 @@ if (auto_animate_walk){
 }
 depth = -y;
 
-
+// Exclamanation
 if(show_exclamation){
 	exclamation_timer--;
 	if(exclamation_timer <= 0){
@@ -34,6 +68,7 @@ if(show_exclamation){
 	}
 }
 
+// Fading
 if(fade){
 	if(image_alpha > 0){
 		image_alpha -=fade_spd;	
@@ -67,3 +102,18 @@ if(fade_in){
 		}
 	}
 }
+
+
+
+// Used for follow actor
+if (x != xprevious || y != yprevious) {
+    // Add current position to the start of the array
+    array_insert(pos_history, 0, {x: x, y: y});
+    
+    // Trim the array so it doesn't grow infinitely
+    if (array_length(pos_history) > max_history) {
+        array_delete(pos_history, max_history, 1);
+    }
+}
+
+

@@ -30,6 +30,9 @@ function Enums(){
 		EXCLAMATION,
 		FADE_OUT,
 		ACTOR_SET_ALPHA,
+		FOLLOW_ACTOR,
+		MANUAL_OVERRIDE,
+		CAMERA_FOLLOW_ACTOR
 	}
 	
 	enum PREFER {
@@ -37,5 +40,11 @@ function Enums(){
 		HORZ
 	}
 	
+	enum DIRECTIONS {
+		UP,
+		DOWN,
+		LEFT,
+		RIGHT,
+	}
 
 }

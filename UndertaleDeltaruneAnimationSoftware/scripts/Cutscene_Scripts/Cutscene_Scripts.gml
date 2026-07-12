@@ -298,6 +298,31 @@ function action_actor_set_alpha(actor, alpha,fade_to = false,fade_spd = 0.05,wai
 	}
 }
 
+function action_actor_follow_actor(follower, leader, spacing = 7, auto_animate_walk = true){
+	return {
+		type: ACTION.FOLLOW_ACTOR,
+		follower,
+		leader,
+		spacing,
+		auto_animate_walk
+	}
+}
+
+function action_actor_manual_override(actor,override){
+	return {
+		type: ACTION.MANUAL_OVERRIDE,
+		actor,
+		override
+	}
+}
+
+
+function action_camera_follow_actor(actor){
+	return {
+		type: ACTION.CAMERA_FOLLOW_ACTOR,
+		actor
+	}
+}
 
 
 function start_cutscene(actions) {
