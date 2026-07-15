@@ -523,6 +523,12 @@ if (cutscene_active) {
 				current_action++;
 			break;
 			
+			// Stop following
+			case ACTION.ACTOR_STOP_FOLLOWING:
+				var actor = get_actor_by_id(action.actor);
+				actor.follow_actor = false;
+				current_action++;
+			break;
 			
 			// Have the camera follow an actor
 			case ACTION.CAMERA_FOLLOW_ACTOR:

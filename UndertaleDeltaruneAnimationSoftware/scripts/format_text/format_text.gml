@@ -40,9 +40,15 @@ function format_text(){
 					}
 				
 					if(char_over == 3){
-						new_text += "-\n   " // Cut off the word, new line
-						cur_width = 0;
-						char_over = 0;
+						// Only cut it off if the final word has three or more letters left
+						if(string_length(text) - 3 > char + 3){
+							if(string_char_at(text,char + 1) != " " && string_char_at(text,char + 2) != " " && string_char_at(text,char + 3) != " "){	
+								new_text += "-\n   " // Cut off the word, new line
+								cur_width = 0;
+								char_over = 0;
+							}
+						}
+					
 					}
 				}
 			

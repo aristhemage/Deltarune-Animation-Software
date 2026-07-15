@@ -4,10 +4,12 @@ format_text();
 if(change_sprite_when_talking && message_no < array_length(txt)){
 
 	var actor_id = get_actor_by_id(is_array(actor) ? actor[message_no]: actor);
-
-	actor_id.sprite_index = overworld_sprite_arr[message_no];
-	actor_id.auto_animate_walk = false;
-	actor_id.image_speed = sprite_spd_arr[message_no];
+	show_debug_message(actor_id)
+	if(actor_id != noone){
+		actor_id.sprite_index = overworld_sprite_arr[message_no];
+		actor_id.auto_animate_walk = false;
+		actor_id.image_speed = sprite_spd_arr[message_no];
+	}
 }
 
 // Get the currently active message
@@ -15,7 +17,9 @@ var current_text = formatted_text[message_no];
 
 type_timer += 1;
 
-if (type_timer >= type_speed){
+var _type_speed = is_array(type_speed) ? type_speed[message_no] : type_speed;
+
+if (type_timer >= _type_speed){
 	var cur_char = string_char_at(current_text,char_index)
 	var command = false;
 	if(cur_char == "["){
@@ -81,7 +85,8 @@ if(char_index >= string_length(current_text)){
 			// Reset animation frame if animated
 			if(change_sprite_when_talking){
 				var actor_id = get_actor_by_id(is_array(actor) ? actor[message_no]: actor);	
-				actor_id.image_index = 0;
+				if(actor_id != noone)
+					actor_id.image_index = 0;
 			}
 
 		}else{
@@ -89,13 +94,14 @@ if(char_index >= string_length(current_text)){
 			// Restore normal actor animation style
 			if(change_sprite_when_talking){
 				var actor_id = get_actor_by_id(is_array(actor) ? actor[message_no]: actor);
-				
-				if(is_array(actor_id)){
-					for (var i = 0; i < array_length(actor); i++){
-						actor_id[message_no].auto_animate_walk = actor_id[message_no].auto_animate_walk_int;	
+				if(actor_id != noone){
+					if(is_array(actor_id)){
+						for (var i = 0; i < array_length(actor); i++){
+							actor_id[message_no].auto_animate_walk = actor_id[message_no].auto_animate_walk_int;	
+						}
 					}
+					actor_id.auto_animate_walk = actor_id.auto_animate_walk_int;
 				}
-				actor_id.auto_animate_walk = actor_id.auto_animate_walk_int;
 			}
 			
 			// No more dialogue, destroy textbox

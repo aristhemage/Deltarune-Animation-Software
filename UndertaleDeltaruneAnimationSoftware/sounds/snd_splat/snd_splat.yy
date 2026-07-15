@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snd_suprise",
+  "%Name":"snd_splat",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.2565533,
+  "duration":0.62403625,
   "exportDir":"",
-  "name":"snd_suprise",
+  "name":"snd_splat",
   "parent":{
     "name":"Misc",
     "path":"folders/Sounds/Misc.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_suprise.wav",
+  "soundFile":"snd_splat.wav",
   "volume":1.0,
 }

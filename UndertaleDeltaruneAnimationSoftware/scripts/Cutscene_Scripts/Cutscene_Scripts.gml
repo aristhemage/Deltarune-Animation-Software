@@ -32,7 +32,7 @@ function action_move_actor_direct(actor_id, target_x, target_y, spd) {
 }
 
 // Move an actor directly to checkpoint
-function action_move_actor_direct_checkpoint(actor_id, checkpoint_id, spd) {
+function action_move_actor_direct_checkpoint(actor_id, checkpoint_id, spd = 2) {
     return {
         type: ACTION.MOVE_ACTOR_DIRECT_CHECKPOINT,
         actor: actor_id,
@@ -42,7 +42,7 @@ function action_move_actor_direct_checkpoint(actor_id, checkpoint_id, spd) {
 }
 
 // Move an actor starting by moving up/down or left/right, then doing the other after.
-function action_move_actor_nondirect(actor_id, target_x, target_y, spd, prefer) {
+function action_move_actor_nondirect(actor_id, target_x, target_y, spd = 2, prefer = PREFER.VERT) {
     return {
         type: ACTION.MOVE_ACTOR_NONDIRECT,
         actor: actor_id,
@@ -54,7 +54,7 @@ function action_move_actor_nondirect(actor_id, target_x, target_y, spd, prefer) 
 }
 
 // Same as above but to a checkpoint
-function action_move_actor_nondirect_checkpoint(actor_id, checkpoint_id, spd, prefer) {
+function action_move_actor_nondirect_checkpoint(actor_id, checkpoint_id, spd = 2, prefer = PREFER.VERT) {
     return {
         type: ACTION.MOVE_ACTOR_NONDIRECT_CHECKPOINT,
         actor: actor_id,
@@ -298,13 +298,20 @@ function action_actor_set_alpha(actor, alpha,fade_to = false,fade_spd = 0.05,wai
 	}
 }
 
-function action_actor_follow_actor(follower, leader, spacing = 7, auto_animate_walk = true){
+function action_actor_follow_actor(follower, leader, spacing = 12, auto_animate_walk = true){
 	return {
 		type: ACTION.FOLLOW_ACTOR,
 		follower,
 		leader,
 		spacing,
 		auto_animate_walk
+	}
+}
+
+function action_actor_stop_following(actor){
+	return {
+		type: ACTION.ACTOR_STOP_FOLLOWING,
+		actor
 	}
 }
 
