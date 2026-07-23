@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Cutscene",
-    "path":"folders/Objects/Cutscene.yy",
+    "path":"folders/Objects/Backend/Cutscene.yy",
   },
   "parentObjectId":null,
   "persistent":false,

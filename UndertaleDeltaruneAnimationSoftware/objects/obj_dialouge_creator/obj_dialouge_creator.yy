@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Cutscene GUI stuff",
-    "path":"folders/Objects/Cutscene GUI stuff.yy",
+    "path":"folders/Objects/Frontend/Cutscene GUI stuff.yy",
   },
   "parentObjectId":null,
   "persistent":false,

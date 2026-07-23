@@ -38,8 +38,8 @@
   ],
   "name":"rm_game",
   "parent":{
-    "name":"UndertaleDeltaruneAnimationSoftware",
-    "path":"UndertaleDeltaruneAnimationSoftware.yyp",
+    "name":"Rooms",
+    "path":"folders/Rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

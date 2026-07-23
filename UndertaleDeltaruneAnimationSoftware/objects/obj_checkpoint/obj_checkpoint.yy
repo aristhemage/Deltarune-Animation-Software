@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Checkpoints",
-    "path":"folders/Objects/Checkpoints.yy",
+    "path":"folders/Objects/Backend/Checkpoints.yy",
   },
   "parentObjectId":null,
   "persistent":false,

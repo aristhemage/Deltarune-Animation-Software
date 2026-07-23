@@ -43,8 +43,8 @@
   ],
   "name":"rm_programmers_wanted",
   "parent":{
-    "name":"UndertaleDeltaruneAnimationSoftware",
-    "path":"UndertaleDeltaruneAnimationSoftware.yyp",
+    "name":"Rooms",
+    "path":"folders/Rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
