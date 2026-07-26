@@ -3,9 +3,9 @@ var clip_y = 270;
 var clip_w = 3000;
 var clip_h = 310;
 var draw_y = y - scroll_y;
-
-_visible = draw_y + sprite_height * image_yscale > clip_y + 20
-           && draw_y < clip_y + clip_h-20;
+var buffer = 20
+_visible = draw_y + sprite_height * image_yscale > clip_y + buffer
+           && draw_y < clip_y + clip_h-buffer;
 // Draw your scrolling content
 draw_set_colour(c_white);
 draw_set_font(fnt_text);
