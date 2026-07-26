@@ -2,5 +2,4 @@ image_speed = 0;
 image_index = 0;
 y_offset = 0;
 
-// The box that owns us.
 owner = noone;
