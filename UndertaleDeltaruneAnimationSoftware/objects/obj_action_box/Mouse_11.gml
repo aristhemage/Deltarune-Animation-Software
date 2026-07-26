@@ -1,2 +1,2 @@
-image_index = 0;
+hover = false;
 window_set_cursor(cr_default)

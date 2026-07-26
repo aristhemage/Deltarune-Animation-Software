@@ -60,6 +60,7 @@
   "resources":[
     {"id":{"name":"fnt_text","path":"fonts/fnt_text/fnt_text.yy",},},
     {"id":{"name":"obj_action_box","path":"objects/obj_action_box/obj_action_box.yy",},},
+    {"id":{"name":"obj_action_list","path":"objects/obj_action_list/obj_action_list.yy",},},
     {"id":{"name":"obj_action_master","path":"objects/obj_action_master/obj_action_master.yy",},},
     {"id":{"name":"obj_actor","path":"objects/obj_actor/obj_actor.yy",},},
     {"id":{"name":"obj_add_action_button","path":"objects/obj_add_action_button/obj_add_action_button.yy",},},

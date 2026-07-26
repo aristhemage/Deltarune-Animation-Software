@@ -1,2 +1,2 @@
-image_index = 1;
+hover = true;
 window_set_cursor(cr_handpoint)
