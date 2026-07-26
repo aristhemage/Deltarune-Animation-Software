@@ -76,3 +76,5 @@ function recalculate_layout(){
         xx += width + buffer;
     }
 }
+
+image_alpha = 0;

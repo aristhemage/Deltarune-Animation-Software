@@ -10,3 +10,4 @@ plus_button = noone;
 minus_button = noone;
 action_list = noone;
 hover = false;
+

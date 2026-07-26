@@ -13,8 +13,8 @@
   "name":"obj_add_action_button",
   "overriddenProperties":[],
   "parent":{
-    "name":"GUI",
-    "path":"folders/Objects/Frontend/GUI.yy",
+    "name":"Actions",
+    "path":"folders/Objects/Frontend/GUI/Actions.yy",
   },
   "parentObjectId":null,
   "persistent":false,

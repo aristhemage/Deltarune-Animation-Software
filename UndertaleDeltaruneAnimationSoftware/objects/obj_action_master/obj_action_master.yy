@@ -9,8 +9,8 @@
   "name":"obj_action_master",
   "overriddenProperties":[],
   "parent":{
-    "name":"GUI",
-    "path":"folders/Objects/Frontend/GUI.yy",
+    "name":"Actions",
+    "path":"folders/Objects/Frontend/GUI/Actions.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_action_box",
+    "path":"sprites/spr_action_box/spr_action_box.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

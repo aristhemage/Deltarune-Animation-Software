@@ -21,6 +21,7 @@
     {"$GMFolder":"","%Name":"Frontend","folderPath":"folders/Objects/Frontend.yy","name":"Frontend","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Cutscene GUI stuff","folderPath":"folders/Objects/Frontend/Cutscene GUI stuff.yy","name":"Cutscene GUI stuff","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"GUI","folderPath":"folders/Objects/Frontend/GUI.yy","name":"GUI","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Actions","folderPath":"folders/Objects/Frontend/GUI/Actions.yy","name":"Actions","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Scripts","folderPath":"folders/Scripts.yy","name":"Scripts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sounds","folderPath":"folders/Sounds.yy","name":"Sounds","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -60,6 +61,7 @@
   "resources":[
     {"id":{"name":"fnt_text","path":"fonts/fnt_text/fnt_text.yy",},},
     {"id":{"name":"obj_action_box","path":"objects/obj_action_box/obj_action_box.yy",},},
+    {"id":{"name":"obj_action_command","path":"objects/obj_action_command/obj_action_command.yy",},},
     {"id":{"name":"obj_action_list","path":"objects/obj_action_list/obj_action_list.yy",},},
     {"id":{"name":"obj_action_master","path":"objects/obj_action_master/obj_action_master.yy",},},
     {"id":{"name":"obj_actor","path":"objects/obj_actor/obj_actor.yy",},},

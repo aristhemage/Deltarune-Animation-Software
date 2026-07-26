@@ -1,0 +1,6 @@
+image_speed = 0;
+scroll_y = 0;
+hovered = false;
+selected = false;
+mouse_cur = mouse_y;
+_visible = false;
