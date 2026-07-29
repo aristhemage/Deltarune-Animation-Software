@@ -4,3 +4,6 @@ hovered = false;
 selected = false;
 mouse_cur = mouse_y;
 _visible = false;
+action_name = "";
+command_extra = "";
+smaller = false;

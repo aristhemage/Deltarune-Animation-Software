@@ -13,7 +13,12 @@ hovered = point_in_rectangle(mx, my,x,y - scroll_y, x + sprite_width,y - scroll_
 
 // Click
 if (hovered && mouse_check_button_released(mb_left) && _visible){
-	get_box_by_id(box_id).command_name = _id;
+	var temp = action_name;
+	action_name = string_replace_all(action_name, "\n", " ");
+	if(temp != action_name){smaller = true}else{smaller = false};
+	get_box_by_id(box_id).command_name = action_name;
+	get_box_by_id(box_id).smaller = smaller;
+	get_box_by_id(box_id).command_extra = command_extra;
 }
 
 image_index = hovered ? 1 :0;
@@ -23,7 +28,7 @@ image_index = hovered ? 1 :0;
 if (mouse_check_button(mb_left) &&  distance_to_point(mouse_x,y) < 96){
     var dist = mouse_y - mouse_cur;
 
-    scroll_y = clamp(scroll_y + dist, -ACTION.END_LIST * 67,0);
+    scroll_y = clamp(scroll_y - dist, -ACTION.END_LIST * 67,0);
 
     
 }
