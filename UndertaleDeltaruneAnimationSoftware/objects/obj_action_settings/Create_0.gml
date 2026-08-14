@@ -7,4 +7,3 @@ _visible = false;
 action_name = "";
 command_extra = "";
 smaller = false;
-prev_scroll_y = mouse_y;

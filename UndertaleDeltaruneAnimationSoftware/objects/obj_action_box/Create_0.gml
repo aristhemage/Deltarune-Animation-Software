@@ -1,6 +1,6 @@
 image_speed = 0;
-command_name = "Command Name";
-command_extra = "Extra details about the command";
+command_name = "No command selected!";
+command_extra = "Click here to add a command";
 
 
 box_id = -1;

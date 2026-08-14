@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"get_command_info_temp",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_command_info_temp",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

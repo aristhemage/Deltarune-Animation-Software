@@ -12,18 +12,28 @@ var my = device_mouse_y_to_gui(0);
 hovered = point_in_rectangle(mx, my,x,y - scroll_y, x + sprite_width,y - scroll_y + sprite_height);
 
 // Click
+
+// Prevent selecting when scrolling
+if(mouse_check_button_pressed(mb_left)){
+	prev_scroll_y = scroll_y;
+}
+
 if (hovered && mouse_check_button_released(mb_left) && _visible){
-	var temp = action_name;
-	action_name = string_replace_all(action_name, "\n", " ");
-	if(temp != action_name){smaller = true}else{smaller = false};
-	get_box_by_id(box_id).command_name = action_name;
-	get_box_by_id(box_id).smaller = smaller;
-	get_box_by_id(box_id).command_extra = command_extra;
+	if(abs(prev_scroll_y - scroll_y) < 20){
+		var temp = action_name;
+		action_name = string_replace_all(action_name, "\n", " ");
+		if(temp != action_name){smaller = true}else{smaller = false};
+		get_box_by_id(box_id).command_name = action_name;
+		get_box_by_id(box_id).smaller = smaller;
+		get_box_by_id(box_id).command_extra = command_extra;
+		prev_scroll_y = scroll_y;
+	}
 }
 
 image_index = hovered ? 1 :0;
 
 // Scroll via click
+
 
 if (mouse_check_button(mb_left) &&  distance_to_point(mouse_x,y) < 96){
     var dist = mouse_y - mouse_cur;
@@ -32,4 +42,9 @@ if (mouse_check_button(mb_left) &&  distance_to_point(mouse_x,y) < 96){
 
     
 }
+
+
+
+
+
 mouse_cur = mouse_y;
