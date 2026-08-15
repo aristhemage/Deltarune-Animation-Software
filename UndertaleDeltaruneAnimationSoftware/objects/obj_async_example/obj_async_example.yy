@@ -10,8 +10,8 @@
   "name":"obj_async_example",
   "overriddenProperties":[],
   "parent":{
-    "name":"GUI",
-    "path":"folders/Objects/Frontend/GUI.yy",
+    "name":"Misc",
+    "path":"folders/Objects/Backend/Misc.yy",
   },
   "parentObjectId":null,
   "persistent":false,

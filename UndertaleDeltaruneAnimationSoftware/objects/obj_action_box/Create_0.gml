@@ -1,6 +1,9 @@
 image_speed = 0;
 command_name = "No command selected!";
 command_extra = "Click here to add a command";
+question_arr = ["Default Question!"];
+current_question = 0;
+answers_arr = [];
 
 
 box_id = -1;

@@ -26,6 +26,7 @@ if (hovered && mouse_check_button_released(mb_left) && _visible){
 		get_box_by_id(box_id).command_name = action_name;
 		get_box_by_id(box_id).smaller = smaller;
 		get_box_by_id(box_id).command_extra = command_extra;
+		get_box_by_id(box_id).question_arr = question_arr;
 		prev_scroll_y = scroll_y;
 	}
 }

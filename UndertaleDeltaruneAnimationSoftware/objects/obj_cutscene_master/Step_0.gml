@@ -329,9 +329,17 @@ if (cutscene_active) {
 			
 			// Wait for an actor to finish their animation
 			case ACTION.ACTOR_WAIT_FOR_ANIMATION:
-					var _actor = get_actor_by_id(action.actor);
-					if(_actor.image_index >= _actor.image_number-1){
-						current_action++;	
+				    var _actor = get_actor_by_id(action.actor);
+
+				    // Only wait if the actor is currently using the requested sprite
+				    if (_actor.sprite_index == action.sprite) {
+				        // Check if the animation has reached its final frame
+				        if (_actor.image_index >= _actor.image_number - 1) {
+				            current_action++;
+				        }
+				    }else{
+						// Set the sprite
+						_actor.sprite_index = action.sprite;	
 					}
 				break;
 			

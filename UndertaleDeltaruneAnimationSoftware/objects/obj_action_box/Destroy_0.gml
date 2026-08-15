@@ -6,3 +6,6 @@ if (instance_exists(minus_button))
 	
 if (instance_exists(action_list))
     instance_destroy(action_list);
+	
+if (instance_exists(action_settings))
+    instance_destroy(action_settings);

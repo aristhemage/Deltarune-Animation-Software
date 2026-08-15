@@ -1,6 +1,6 @@
 function ask_next_question() {
-    if (currentQuestion < array_length(questionArr)) {
-        get_string_async(questionArr[currentQuestion], "");
+    if (current_question < array_length(question_arr)) {
+        get_string_async(question_arr[current_question], "");
     }
 }
 

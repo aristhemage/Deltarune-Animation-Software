@@ -7,3 +7,4 @@ _visible = false;
 action_name = "";
 command_extra = "";
 smaller = false;
+instance_create_depth(x,y,-99,obj_add_action_questions, {owner: id});

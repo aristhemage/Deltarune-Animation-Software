@@ -67,6 +67,7 @@
     {"id":{"name":"obj_action_settings","path":"objects/obj_action_settings/obj_action_settings.yy",},},
     {"id":{"name":"obj_actor","path":"objects/obj_actor/obj_actor.yy",},},
     {"id":{"name":"obj_add_action_button","path":"objects/obj_add_action_button/obj_add_action_button.yy",},},
+    {"id":{"name":"obj_add_action_questions","path":"objects/obj_add_action_questions/obj_add_action_questions.yy",},},
     {"id":{"name":"obj_async_example","path":"objects/obj_async_example/obj_async_example.yy",},},
     {"id":{"name":"obj_camera_focus_dot","path":"objects/obj_camera_focus_dot/obj_camera_focus_dot.yy",},},
     {"id":{"name":"obj_camera_focus","path":"objects/obj_camera_focus/obj_camera_focus.yy",},},
