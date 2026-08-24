@@ -43,6 +43,10 @@ function create_box(insert_index){
 function remove_box(box){
     var index = -1;
 
+    if (instance_exists(obj_action_play)){
+        obj_action_play.action_queue[box.box_id] = undefined;
+    }
+
     for (var i = 0; i < array_length(boxes); i++){
         if (boxes[i] == box){
             index = i;
@@ -54,8 +58,19 @@ function remove_box(box){
         return;
 
     array_delete(boxes, index, 1);
-
+	//show_debug_message(
+	//    "REMOVING BOX " + string(box.box_id) +
+	//    " | QUESTIONS: " + string(box.question_arr) +
+	//    " | ANSWERS: " + string(box.answers_arr)
+	//);
     instance_destroy(box);
+	for (var i = 0; i < array_length(boxes); i++) {
+    //show_debug_message(
+    //    "REMAINING BOX " + string(boxes[i].box_id) +
+    //    " | QUESTIONS: " + string(boxes[i].question_arr) +
+    //    " | ANSWERS: " + string(boxes[i].answers_arr)
+    //);
+}
 
     recalculate_layout();
 }

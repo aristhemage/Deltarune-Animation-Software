@@ -14,3 +14,6 @@ if(smaller){
 	draw_text_transformed(x-32,y,command_name,0.5,0.5,0);
 	draw_text_transformed(x-32,y+32,command_extra,0.4,0.4,0);
 }
+
+
+draw_text(x,y+64,box_id)

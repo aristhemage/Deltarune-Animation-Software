@@ -4,3 +4,10 @@ if(instance_exists(owner)){
 }else{
 	instance_destroy();	
 }
+
+// Cant be and because of some GML BS.
+if(instance_exists(owner)){
+	if(instance_exists(owner.owner)){	
+		owner.owner.answers_arr = answers_arr;
+	}
+}

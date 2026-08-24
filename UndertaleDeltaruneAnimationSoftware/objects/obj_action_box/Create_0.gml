@@ -8,9 +8,16 @@ answers_arr = [];
 
 box_id = -1;
 index = -1;
+dialog_id = -1;
 
 plus_button = noone;
 minus_button = noone;
 action_list = noone;
+action_settings = noone;
 hover = false;
 smaller = false;
+
+//show_debug_message(
+//    "BOX " + string(box_id) +
+//    " | answers: " + string(answers_arr)
+//);
