@@ -23,4 +23,4 @@ for (var i = 0; i < array_length(obj_action_master.boxes); i++) {
     ]);
 }
 
-show_debug_message("FINAL QUEUE: " + string(action_queue));
+//show_debug_message("FINAL QUEUE: " + string(action_queue));

@@ -16,4 +16,4 @@ if(smaller){
 }
 
 
-draw_text(x,y+64,box_id)
+//draw_text(x,y+64,box_id)

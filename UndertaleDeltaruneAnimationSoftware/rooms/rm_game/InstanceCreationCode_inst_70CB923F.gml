@@ -3,7 +3,7 @@ sprite_down = spr_susie_walk_down;
 sprite_up = spr_susie_walk_up;
 sprite_right = spr_susie_walk_right;
 sprite_left = spr_susie_walk_left;
-
+fade_in = false;
 actor_id = "Susie";
 
 auto_animate_walk = true; // Automatically animate walking when moving;
