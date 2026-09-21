@@ -1,2 +1,4 @@
 selected = true;
-obj_actor_creator_master.actor_selected = id;
+obj_master.actor_selected = id;
+x_dist = x - mouse_x;
+y_dist = y - mouse_y;

@@ -48,5 +48,13 @@ function Enums(){
 		LEFT,
 		RIGHT,
 	}
+	
+	enum BOXTYPE {
+		BACKGROUND,
+		ADD_ACTION,
+		REMOVE_ACTION,
+		ACTION_DISPLAY,
+		CREATE_ACTOR
+	}
 
 }

@@ -1,15 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_action_list",
+  "%Name":"obj_guibox_factory",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_action_list",
+  "name":"obj_guibox_factory",
   "overriddenProperties":[],
   "parent":{
-    "name":"Actions",
-    "path":"folders/Objects/Frontend/GUI/Old/Actions.yy",
+    "name":"GUI",
+    "path":"folders/Objects/Frontend/GUI.yy",
   },
   "parentObjectId":null,
   "persistent":false,

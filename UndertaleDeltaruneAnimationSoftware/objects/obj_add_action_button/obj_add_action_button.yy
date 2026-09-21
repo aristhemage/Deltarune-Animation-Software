@@ -14,7 +14,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Actions",
-    "path":"folders/Objects/Frontend/GUI/Actions.yy",
+    "path":"folders/Objects/Frontend/GUI/Old/Actions.yy",
   },
   "parentObjectId":null,
   "persistent":false,

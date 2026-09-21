@@ -1,1 +1,0 @@
-obj_camera_focus_dot.zoom -= 0.1
