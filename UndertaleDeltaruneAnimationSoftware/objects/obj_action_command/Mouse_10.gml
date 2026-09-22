@@ -1,1 +1,1 @@
-window_set_cursor(cr_handpoint)
+cursor_controller(cr_handpoint);

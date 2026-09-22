@@ -1,2 +1,2 @@
 image_index = 1;
-window_set_cursor(cr_handpoint)
+cursor_controller(cr_handpoint);

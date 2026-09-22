@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"cursor_controller",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"cursor_controller",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

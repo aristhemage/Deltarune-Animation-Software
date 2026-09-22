@@ -1,2 +1,2 @@
 image_index = 0;
-window_set_cursor(cr_arrow)
+cursor_controller();
