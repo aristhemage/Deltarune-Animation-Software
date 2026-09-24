@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"get_command_info_temp",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Temp",
+    "path":"folders/Scripts/Frontend/Temp.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"get_box_by_id",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Get ID",
+    "path":"folders/Scripts/Backend/Get ID.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

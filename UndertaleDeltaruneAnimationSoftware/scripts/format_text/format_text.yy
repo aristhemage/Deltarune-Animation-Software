@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"format_text",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Text",
+    "path":"folders/Scripts/Backend/Text.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

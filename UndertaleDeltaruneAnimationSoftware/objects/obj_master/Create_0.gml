@@ -3,3 +3,4 @@ gpu_set_texfilter(false);
 #macro vk_close_bracket 221
 
 actor_selected = -1;
+debug = false;

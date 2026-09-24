@@ -1,4 +1,4 @@
-function gui_mouse_hover_sprite(_x, _y, _sprite) {
+function gui_mouse_hover_sprite(_x = x, _y = y, _sprite = sprite_index) {
     var m_x = device_mouse_x_to_gui(0);
     var m_y = device_mouse_y_to_gui(0);
 

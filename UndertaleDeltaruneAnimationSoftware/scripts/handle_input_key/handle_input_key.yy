@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"handle_input_key",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Text",
+    "path":"folders/Scripts/Frontend/Text.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

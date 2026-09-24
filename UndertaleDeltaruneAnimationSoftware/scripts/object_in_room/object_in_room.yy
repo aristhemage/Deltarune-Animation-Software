@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"object_in_room",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Misc",
+    "path":"folders/Scripts/Frontend/Misc.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

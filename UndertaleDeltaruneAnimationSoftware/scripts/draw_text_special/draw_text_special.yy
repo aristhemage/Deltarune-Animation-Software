@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"draw_text_special",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Text",
+    "path":"folders/Scripts/Backend/Text.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

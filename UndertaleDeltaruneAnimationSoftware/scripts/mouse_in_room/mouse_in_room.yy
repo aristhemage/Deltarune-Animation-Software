@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"mouse_in_room",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Mouse",
+    "path":"folders/Scripts/Frontend/Mouse.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

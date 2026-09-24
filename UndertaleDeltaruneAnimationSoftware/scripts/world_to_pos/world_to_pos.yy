@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"world_to_pos",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"GUI",
+    "path":"folders/Scripts/Frontend/GUI.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

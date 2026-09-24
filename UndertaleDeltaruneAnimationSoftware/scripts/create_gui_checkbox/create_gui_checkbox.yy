@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"gui_mouse_hover_sprite",
+  "%Name":"create_gui_checkbox",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"gui_mouse_hover_sprite",
+  "name":"create_gui_checkbox",
   "parent":{
-    "name":"Mouse",
-    "path":"folders/Scripts/Frontend/Mouse.yy",
+    "name":"GUI",
+    "path":"folders/Scripts/Frontend/GUI.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"build_dialogue",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Text",
+    "path":"folders/Scripts/Backend/Text.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
