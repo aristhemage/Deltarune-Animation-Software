@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Script22",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Script22",
+  "parent":{
+    "name":"Misc",
+    "path":"folders/Scripts/Frontend/Misc.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

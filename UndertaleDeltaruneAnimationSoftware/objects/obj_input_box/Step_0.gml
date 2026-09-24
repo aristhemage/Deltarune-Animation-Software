@@ -101,4 +101,6 @@ else {
 // Destroy if owner is gone
 if (!instance_exists(owner)) {
     instance_destroy();
+}else{
+	follow_original_owner();
 }

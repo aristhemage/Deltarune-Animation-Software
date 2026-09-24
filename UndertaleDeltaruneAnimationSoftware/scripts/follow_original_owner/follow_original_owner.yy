@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"follow_original_owner",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"follow_original_owner",
+  "parent":{
+    "name":"GUI",
+    "path":"folders/Scripts/Frontend/GUI.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

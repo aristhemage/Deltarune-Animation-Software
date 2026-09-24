@@ -24,3 +24,4 @@ repeat_key = vk_nokey;
 repeat_timer = 0;
 repeat_delay = 24;
 repeat_interval = 3;
+
