@@ -6,7 +6,7 @@ function cursor_controller(type = cr_arrow, force = false){
 	switch(type){
 		case cr_handpoint:
 		case cr_arrow:
-			if(window_get_cursor() == cr_beam){
+			if(window_get_cursor() == cr_beam || window_get_cursor() == cr_none){
 				return;	
 			}
 		break;

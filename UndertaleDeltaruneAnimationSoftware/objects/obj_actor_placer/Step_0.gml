@@ -16,10 +16,12 @@ if (selected) {
     var right  = bbox_right - x;
     var top    = y - bbox_top;
     var bottom = bbox_bottom - y;
+	
 
-    // Keep the entire object inside the room with a 30px buffer
-    x = clamp(new_x, 30 + left, room_width - 30 - right);
-    y = clamp(new_y, 30 + top, room_height - 30 - bottom);
+	// Keep the entire object inside the room with a 30px buffer
+	x = clamp(new_x, 30 + left, room_width - 30 - right);
+	y = clamp(new_y, 30 + top, room_height - 30 - bottom);
+	
 }
 
 if(box != -1){

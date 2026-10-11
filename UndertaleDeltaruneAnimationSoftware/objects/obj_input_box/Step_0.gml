@@ -35,16 +35,16 @@ if (mouse_check_button_pressed(mb_left)) {
     else {
         if (selected) {
             selected = false;
-
-            if (instance_exists(owner)) {
-                exit_comm();
-            }
         }
 
         dragging = false;
     }
 }
 
+// Send data to owner
+if (instance_exists(owner)) {
+    exit_comm();
+}
 // Drag to select
 if (dragging && mouse_check_button(mb_left)) {
 
