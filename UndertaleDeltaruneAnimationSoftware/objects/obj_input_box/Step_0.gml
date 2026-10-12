@@ -11,6 +11,11 @@ if (mouse_check_button_pressed(mb_left)) {
 	
 	// Dragging and highlighting stuff
     if (hovering) {
+		// Dont move the camera when typing
+		if(obj_camera_focus_dot.controllable){
+			holding_camera_hostage = true;
+			obj_camera_focus_dot.controllable = false;
+		}
         selected = true;
         dragging = true;
 
@@ -35,6 +40,8 @@ if (mouse_check_button_pressed(mb_left)) {
     else {
         if (selected) {
             selected = false;
+			
+			if(holding_camera_hostage){holding_camera_hostage = false; obj_camera_focus_dot.controllable = true;}
         }
 
         dragging = false;

@@ -1,5 +1,6 @@
-// Known bug, double tapping when already existing makes another one
+// Known bug, zoom is borked, force zoom
 if(box == noone || box == -1){
+	obj_camera_focus_dot.zoom = 1;
 	var pos = world_to_gui(x,y)
 	box = create_guibox(spr_action_box,pos[0]+96,pos[1]-64,BOXTYPE.BACKGROUND,false,false,true);
 	box.image_xscale = 4;

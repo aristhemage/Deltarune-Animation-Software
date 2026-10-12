@@ -11,5 +11,8 @@ view_camera[0] = cam;
 
 // Set window size
 window_set_size(1280, 960);
+surface_resize(application_surface, 1280, 960);
+window_set_position(350, 50);
+
 
 created = false;

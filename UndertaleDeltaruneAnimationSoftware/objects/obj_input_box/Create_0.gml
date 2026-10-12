@@ -25,3 +25,5 @@ repeat_timer = 0;
 repeat_delay = 24;
 repeat_interval = 3;
 
+holding_camera_hostage = false;
+
