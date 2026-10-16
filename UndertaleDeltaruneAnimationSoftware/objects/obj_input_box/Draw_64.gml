@@ -53,3 +53,15 @@ if (selected) {
         draw_line(cursor_x, text_y, cursor_x, text_y + string_height("A") * text_scale);
     }
 }
+
+// Extra things to draw, used in search query:
+if (variable_instance_exists(id, "draw_callback")) {
+    if (is_callable(draw_callback)) {
+        draw_callback();
+    }
+}
+
+var mx = device_mouse_x_to_gui(0);
+var my = device_mouse_y_to_gui(0);
+
+

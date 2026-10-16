@@ -4,3 +4,5 @@ actor_id = "";
 auto_walk = false;
 x_dist = 0;
 y_dist = 0;
+character_selected = "";
+results = [];

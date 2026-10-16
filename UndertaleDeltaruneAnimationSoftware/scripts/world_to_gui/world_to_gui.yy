@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"world_to_pos",
+  "%Name":"world_to_gui",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"world_to_pos",
+  "name":"world_to_gui",
   "parent":{
     "name":"GUI",
     "path":"folders/Scripts/Frontend/GUI.yy",

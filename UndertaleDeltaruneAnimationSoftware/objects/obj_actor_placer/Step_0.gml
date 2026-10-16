@@ -31,3 +31,4 @@ if(box != -1){
 	box.owner = id;
 	box.destroy_click_off = true;
 }
+

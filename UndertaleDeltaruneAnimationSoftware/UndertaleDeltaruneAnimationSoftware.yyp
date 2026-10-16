@@ -125,7 +125,7 @@
     {"id":{"name":"mouse_in_room","path":"scripts/mouse_in_room/mouse_in_room.yy",},},
     {"id":{"name":"object_in_room","path":"scripts/object_in_room/object_in_room.yy",},},
     {"id":{"name":"Script22","path":"scripts/Script22/Script22.yy",},},
-    {"id":{"name":"world_to_pos","path":"scripts/world_to_pos/world_to_pos.yy",},},
+    {"id":{"name":"world_to_gui","path":"scripts/world_to_gui/world_to_gui.yy",},},
     {"id":{"name":"snd_doorclose","path":"sounds/snd_doorclose/snd_doorclose.yy",},},
     {"id":{"name":"snd_dooropen","path":"sounds/snd_dooropen/snd_dooropen.yy",},},
     {"id":{"name":"snd_splat","path":"sounds/snd_splat/snd_splat.yy",},},

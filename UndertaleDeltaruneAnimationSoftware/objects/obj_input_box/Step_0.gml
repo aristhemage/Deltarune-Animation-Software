@@ -50,7 +50,10 @@ if (mouse_check_button_pressed(mb_left)) {
 
 // Send data to owner
 if (instance_exists(owner)) {
-    exit_comm();
+    if (input != previous_input) {
+	    previous_input = input;
+	    exit_comm();
+	}
 }
 // Drag to select
 if (dragging && mouse_check_button(mb_left)) {
@@ -105,9 +108,38 @@ else {
     }
 }
 
+/// Click on search results
+
+if (variable_instance_exists(id, "draw_callback") && is_callable(draw_callback)) {
+    if (mouse_check_button_pressed(mb_left)) { 
+        var owner_inst = find_original_owner(id);
+        var mx = device_mouse_x_to_gui(0);
+        var my = device_mouse_y_to_gui(0);
+
+        if (instance_exists(owner_inst)) {
+            for (var i = 0; i < array_length(owner_inst.result_boxes); i++) {
+                var bx = owner_inst.result_boxes[i][0];
+                var by = owner_inst.result_boxes[i][1];
+				
+				// Check if the click is inside this result's hitbox
+                if (mx >= bx && mx <= bx + 180 &&
+                    my >= by && my <= by + 45) { 
+					
+					// Select the matching character
+                    input = owner_inst.results[i]; 
+                    previous_input = input; 
+                    exit_comm(); // Apply the selected character
+                    break; // Stop checking other results
+                }
+            }
+        }
+    }
+}
+
 // Destroy if owner is gone
 if (!instance_exists(owner)) {
     instance_destroy();
 }else{
 	follow_original_owner();
 }
+
