@@ -26,7 +26,9 @@ repeat_delay = 24;
 repeat_interval = 3;
 
 holding_camera_hostage = false;
+holding_gui_box_hostage = false;
 previous_input = ""
 
 // For searching
-results = []
+results = [];
+result_boxes = [];

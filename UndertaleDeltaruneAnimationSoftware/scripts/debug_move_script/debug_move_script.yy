@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"debug_move_script",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"debug_move_script",
+  "parent":{
+    "name":"Misc",
+    "path":"folders/Scripts/Frontend/Misc.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

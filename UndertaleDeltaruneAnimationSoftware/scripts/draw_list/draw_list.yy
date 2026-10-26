@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"draw_list",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"draw_list",
+  "parent":{
+    "name":"GUI",
+    "path":"folders/Scripts/Frontend/GUI.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

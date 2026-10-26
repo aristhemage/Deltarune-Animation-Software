@@ -140,3 +140,56 @@ list_chars = [
     "Mr. Butterfly",
     "Unoriginal Starwalker"
 ];
+
+
+animation_actions = [
+        // Movement
+        "idle",
+        "facing_down",
+        "facing_up",
+        "facing_left",
+        "facing_right",
+        "walk_down",
+        "walk_up",
+        "walk_left",
+        "walk_right",
+
+        // Emotions
+        "laugh",
+        "smiling",
+        "angry",
+        "sad",
+        "crying",
+        "surprised",
+        "confused",
+        "embarrassed",
+        "annoyed",
+        "scared",
+        "determined",
+        "thinking",
+
+        // Gestures and special actions
+        "talking",
+        "pointing",
+        "shrugging",
+        "nodding",
+        "shaking_head",
+        "head_scratch",
+        "twonk"
+];
+
+global.susie_sprites = scr_get_character_sprites("susie");
+global.susie_dw_sprites = scr_get_character_sprites("susie", true);
+
+
+var susie_walk = scr_get_animation_sprite(
+    global.susie_sprites,
+    "walk_down"
+);
+
+var susie_laugh = scr_get_animation_sprite(
+    global.susie_sprites,
+    "laugh"
+);
+
+

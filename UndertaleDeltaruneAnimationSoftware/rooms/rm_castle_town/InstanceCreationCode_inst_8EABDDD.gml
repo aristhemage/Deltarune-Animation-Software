@@ -30,7 +30,7 @@ function cutscene(){
 				action_move_actor_nondirect_checkpoint("Susie","sus", 4, PREFER.VERT),
 				action_actor_change_sprite("Susie",spr_susie_walk_up_dw),
 				action_wait_time(0.5),
-				action_actor_change_sprite("Susie",spr_susie_headscratch_dw,1),
+				action_actor_change_sprite("Susie",spr_susie_head_scratch_dw,1),
 				action_display_text(["Woah man... you look..."],snd_text_susie,true,1,100,true,spr_face_susie,4,1,false,,,,true),
 				action_wait_for_object_destroy(obj_textbox),
 				action_actor_change_sprite("Susie",spr_susie_walk_up_dw),

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_get_animation_sprite",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_get_animation_sprite",
+  "parent":{
+    "name":"GUI",
+    "path":"folders/Scripts/Frontend/GUI.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -50,7 +50,7 @@ if (variable_instance_exists(id, "owner")) {
 
         // Check if mouse is hovering over the owner
         var over_owner = position_meeting(mouse_x, mouse_y, owner);
-
+		
         if (!over_owner && destroy_click_off) {
             owner.box = -1;
             instance_destroy();

@@ -43,7 +43,7 @@ function cutscene(){
 				,
 				true,
 				["Susie"],
-				[spr_susie_headscratch_dw],
+				[spr_susie_head_scratch_dw],
 				[1],
 				true
 				),

@@ -16,6 +16,10 @@ if (mouse_check_button_pressed(mb_left)) {
 			holding_camera_hostage = true;
 			obj_camera_focus_dot.controllable = false;
 		}
+		if(owner.destroy_click_off){
+			holding_gui_box_hostage = true;
+			owner.destroy_click_off = false;
+		}
         selected = true;
         dragging = true;
 
@@ -112,29 +116,50 @@ else {
 
 if (variable_instance_exists(id, "draw_callback") && is_callable(draw_callback)) {
     if (mouse_check_button_pressed(mb_left)) { 
-        var owner_inst = find_original_owner(id);
         var mx = device_mouse_x_to_gui(0);
         var my = device_mouse_y_to_gui(0);
+		
 
-        if (instance_exists(owner_inst)) {
-            for (var i = 0; i < array_length(owner_inst.result_boxes); i++) {
-                var bx = owner_inst.result_boxes[i][0];
-                var by = owner_inst.result_boxes[i][1];
-				
-				// Check if the click is inside this result's hitbox
-                if (mx >= bx && mx <= bx + 180 &&
-                    my >= by && my <= by + 45) { 
+			var box_count = array_length(result_boxes);
+			var result_count = array_length(results);
+			var count = min(box_count, result_count);
+		
+
+	            for (var i = 0; i < count; i++) {
+				var bx = result_boxes[i][0];
+				var by = result_boxes[i][1];
+
+					// Check if the click is inside this result's hitbox
+	                if (mx >= bx && mx <= bx + 180 &&
+	                    my >= by && my <= by + 45) { 
 					
-					// Select the matching character
-                    input = owner_inst.results[i]; 
-                    previous_input = input; 
-                    exit_comm(); // Apply the selected character
-                    break; // Stop checking other results
-                }
-            }
-        }
-    }
+						// Select the matching character
+	                    input = results[i]; 
+	                    previous_input = input; 
+	                    exit_comm(); // Apply the selected character
+						if(holding_gui_box_hostage){
+							holding_gui_box_hostage = false;
+							owner.destroy_click_off = true;
+						}
+	                    break; // Stop checking other results
+				}
+			}
+		}
+}else{
+	if(holding_gui_box_hostage){
+		holding_gui_box_hostage = false;
+		owner.destroy_click_off = true;
+	}
 }
+
+
+if(!selected){
+		if(holding_gui_box_hostage){
+		holding_gui_box_hostage = false;
+		owner.destroy_click_off = true;
+	}
+}
+
 
 // Destroy if owner is gone
 if (!instance_exists(owner)) {

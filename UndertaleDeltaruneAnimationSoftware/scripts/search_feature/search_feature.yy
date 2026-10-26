@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"Script22",
+  "%Name":"search_feature",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Script22",
+  "name":"search_feature",
   "parent":{
-    "name":"Misc",
-    "path":"folders/Scripts/Frontend/Misc.yy",
+    "name":"GUI",
+    "path":"folders/Scripts/Frontend/GUI.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

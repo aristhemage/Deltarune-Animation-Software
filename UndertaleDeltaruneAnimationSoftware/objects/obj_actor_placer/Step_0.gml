@@ -29,6 +29,5 @@ if(box != -1){
 	box._x = pos[0]+128;
 	box._y = pos[1]-64;
 	box.owner = id;
-	box.destroy_click_off = true;
 }
 
