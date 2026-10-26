@@ -79,6 +79,7 @@ if (box == noone || box == -1) {
 
     // Starting Sprite
     create_gui_text(x + 30, y + 50, "Starting Sprite", -19, 0.5, fa_left, , , box);
+	
 
     var sprite_box = instance_create_depth(x + 34, y + 60, -1, obj_input_box, {
         owner: box,
@@ -88,7 +89,14 @@ if (box == noone || box == -1) {
     sprite_box.results = [];
     sprite_box.result_boxes = [];
     sprite_box.search_options = [];
+	
+	sprite_box.special_action = function() {
+	    var sprite_name = "spr_" + string_lower(character_selected) + "_" + string_lower(sprite_selected);
+	    var sprite_id = asset_get_index(sprite_name);
 
+	    if (sprite_id != -1) sprite_index = sprite_id;
+	}
+	
     sprite_box.exit_comm = method(sprite_box, function() {
         var actor = find_original_owner(id);
         if (instance_exists(actor)) actor.sprite_selected = input;

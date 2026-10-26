@@ -160,6 +160,9 @@ if(!selected){
 	}
 }
 
+if(variable_instance_exists(id,"special_action")){
+	special_action();	
+}
 
 // Destroy if owner is gone
 if (!instance_exists(owner)) {
