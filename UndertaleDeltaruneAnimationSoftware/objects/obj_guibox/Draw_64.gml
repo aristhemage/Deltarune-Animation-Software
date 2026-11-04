@@ -11,6 +11,13 @@ switch(type){
 			draw_sprite(spr_crosshair,0,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0));
 		}
 	break;
+	case BOXTYPE.CREATE_CHECKPOINT:	
+		if(selected){
+			draw_text_transformed(window_get_width()/2,10,"Select where you want the checkpoint to be",0.75,0.75,0);
+			cursor_controller(cr_none);
+			draw_sprite(spr_crosshair,0,device_mouse_x_to_gui(0),device_mouse_y_to_gui(0));
+		}
+	break;
 	default:
 		//show_message("a")
 	break;

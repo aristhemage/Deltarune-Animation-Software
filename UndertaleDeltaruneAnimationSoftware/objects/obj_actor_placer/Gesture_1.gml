@@ -36,7 +36,7 @@ if (box == noone || box == -1) {
     // Character
     create_gui_text(x + 35, y + 15, "Character", -99, 0.5, fa_left, , , box);
 
-    var character_box = instance_create_depth(x + 34, y + 30, -1, obj_input_box, {
+    var character_box = instance_create_depth(x + 34, y + 28, -1, obj_input_box, {
         owner: box,
         input: character_selected
     });
@@ -78,7 +78,7 @@ if (box == noone || box == -1) {
     });
 
     // Starting Sprite
-    create_gui_text(x + 30, y + 50, "Starting Sprite", -19, 0.5, fa_left, , , box);
+    create_gui_text(x + 30, y + 45, "Starting Sprite", -19, 0.5, fa_left, , , box);
 	
 
     var sprite_box = instance_create_depth(x + 34, y + 60, -1, obj_input_box, {
@@ -110,4 +110,6 @@ if (box == noone || box == -1) {
 
     // Store the sprite input box on this actor placer instance.
     sprite_box_ref = sprite_box;
+	
+	
 }

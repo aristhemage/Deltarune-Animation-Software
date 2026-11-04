@@ -1,0 +1,11 @@
+selected = true;
+box = -1;
+checkpoint_id = "";
+x_dist = 0;
+y_dist = 0;
+colour_selected = "white";
+col = c_white
+results = [];
+image_speed = 0;
+image_xscale = 0.5;
+image_yscale = 0.5;

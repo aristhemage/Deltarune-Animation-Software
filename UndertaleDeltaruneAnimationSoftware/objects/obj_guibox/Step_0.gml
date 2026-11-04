@@ -16,6 +16,10 @@ if(selectable){
 			case BOXTYPE.CREATE_ACTOR:
 				instance_create_depth(mouse_x-sprite_get_width(spr_dummy)/2,mouse_y-sprite_get_height(spr_dummy)/2,1,obj_actor_placer);
 			break;
+			
+			case BOXTYPE.CREATE_CHECKPOINT:
+				instance_create_depth(mouse_x-sprite_get_width(spr_checkpoint)/2,mouse_y-sprite_get_height(spr_checkpoint)/2,1,obj_checkpoint_placer);
+			break;
 		}
 	}
 }

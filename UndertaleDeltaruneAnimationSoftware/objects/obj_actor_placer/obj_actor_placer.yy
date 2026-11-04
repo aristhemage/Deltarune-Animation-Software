@@ -12,8 +12,8 @@
   "name":"obj_actor_placer",
   "overriddenProperties":[],
   "parent":{
-    "name":"Actor Creation",
-    "path":"folders/Objects/Frontend/GUI/Actor Creation.yy",
+    "name":"Creation object",
+    "path":"folders/Objects/Frontend/GUI/Creation object.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -7,3 +7,4 @@ y_dist = 0;
 character_selected = "";
 sprite_selected = "";
 results = [];
+image_speed = 0;

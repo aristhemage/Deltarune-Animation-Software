@@ -178,18 +178,25 @@ animation_actions = [
         "twonk"
 ];
 
-global.susie_sprites = scr_get_character_sprites("susie");
-global.susie_dw_sprites = scr_get_character_sprites("susie", true);
 
-
-var susie_walk = scr_get_animation_sprite(
-    global.susie_sprites,
-    "walk_down"
-);
-
-var susie_laugh = scr_get_animation_sprite(
-    global.susie_sprites,
-    "laugh"
-);
-
-
+colours = [
+    "aqua",
+    "black",
+    "blue",
+    "dkgray",
+    "fuchsia",
+    "gray",
+    "green",
+    "lime",
+    "ltgray",
+    "maroon",
+    "navy",
+    "olive",
+    "orange",
+    "purple",
+    "red",
+    "silver",
+    "teal",
+    "white",
+    "yellow"
+]

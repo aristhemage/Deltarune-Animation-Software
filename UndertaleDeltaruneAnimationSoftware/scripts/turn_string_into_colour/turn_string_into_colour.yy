@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"turn_string_into_colour",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"turn_string_into_colour",
+  "parent":{
+    "name":"Misc",
+    "path":"folders/Scripts/Frontend/Misc.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
