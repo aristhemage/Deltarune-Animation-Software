@@ -56,6 +56,7 @@ function Enums(){
 		ACTION_DISPLAY,
 		CREATE_ACTOR,
 		CREATE_CHECKPOINT,
+		OPEN_CUTSCENE,
 	}
 
 }

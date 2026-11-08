@@ -4,6 +4,7 @@ gpu_set_texfilter(false);
 
 actor_selected = -1;
 debug = false;
+cutscene_open = false;
 
 list_chars = [
     // Main cast

@@ -46,6 +46,25 @@ if(hover && mouse_check_button_pressed(mb_left)){
 	}
 }
 
+if(selected){
+	// Open Cutscene editor
+	if(type == BOXTYPE.OPEN_CUTSCENE){
+		selected = false;
+		if(!obj_master.cutscene_open){
+			var special_destroy_function = function (){
+				obj_master.cutscene_open = false
+			}
+			cutscene_box = create_guibox(spr_action_box,window_get_width()/1.4,130,BOXTYPE.BACKGROUND,false,false,true, special_destroy_function);
+			cutscene_box.image_xscale = 6
+			cutscene_box.image_yscale = 13
+			obj_master.cutscene_open = true;	
+		}else{
+			instance_destroy(cutscene_box)	
+			obj_master.cutscene_open = false;
+		}	
+	}	
+}
+
 // Kill boxes in some scenarios
 if (variable_instance_exists(id, "owner")) {
 

@@ -160,6 +160,7 @@
     {"id":{"name":"spr_face_susie","path":"sprites/spr_face_susie/spr_face_susie.yy",},},
     {"id":{"name":"spr_grey_textbox","path":"sprites/spr_grey_textbox/spr_grey_textbox.yy",},},
     {"id":{"name":"spr_lightworld_textbox","path":"sprites/spr_lightworld_textbox/spr_lightworld_textbox.yy",},},
+    {"id":{"name":"spr_open_cutscene","path":"sprites/spr_open_cutscene/spr_open_cutscene.yy",},},
     {"id":{"name":"spr_play","path":"sprites/spr_play/spr_play.yy",},},
     {"id":{"name":"spr_ralsei_dress_spin","path":"sprites/spr_ralsei_dress_spin/spr_ralsei_dress_spin.yy",},},
     {"id":{"name":"spr_ralsei_dress","path":"sprites/spr_ralsei_dress/spr_ralsei_dress.yy",},},
