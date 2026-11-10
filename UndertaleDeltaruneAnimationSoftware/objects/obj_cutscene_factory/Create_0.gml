@@ -1,0 +1,1 @@
+instance_create_depth(window_get_width()/1.5,window_get_height()/2,-9999,obj_cutscene_node,{owner, menu_x: window_get_width()/2-64 ,menu_y:64,menu_width:666,menu_height:800})

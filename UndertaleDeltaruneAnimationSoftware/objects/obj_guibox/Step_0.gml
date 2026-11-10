@@ -54,8 +54,9 @@ if(selected){
 			var special_destroy_function = function (){
 				obj_master.cutscene_open = false
 			}
-			cutscene_box = create_guibox(spr_action_box,window_get_width()/1.4,130,BOXTYPE.BACKGROUND,false,false,true, special_destroy_function);
-			cutscene_box.image_xscale = 6
+			cutscene_box = create_guibox(spr_action_box,window_get_width()/2,130,BOXTYPE.BACKGROUND,false,false,true, special_destroy_function);
+			instance_create_depth(x,y,1,obj_cutscene_factory,{owner:cutscene_box});
+			cutscene_box.image_xscale = 11
 			cutscene_box.image_yscale = 13
 			obj_master.cutscene_open = true;	
 		}else{
