@@ -11,6 +11,10 @@ with(owner){
 	}
 }
 
+
+
+
+
 // Hovering the big box and ready to be yeeted around
 if(hover && mouse_check_button_pressed(mb_middle)){
 	dragging = true;
@@ -52,4 +56,39 @@ if(dragging){
 	// Zero it out
 	if(abs(velocity_x) < 0.1) velocity_x = 0;
 	if(abs(velocity_y) < 0.1) velocity_y = 0;
+}
+
+
+// Selecting it
+if(gui_mouse_hover_sprite(x,y,spr_action_box)){
+	image_index = 1;	
+	if(mouse_check_button_pressed(mb_left)){
+		dx_select = window_mouse_get_x() - x;
+		dy_select = window_mouse_get_y() - y;
+		selected = true;
+		obj_master.node_selected = id;
+	}
+}else{
+	image_index = 0;	
+}
+
+if(selected){
+	if(obj_master.node_selected == id){
+		x = window_mouse_get_x()-dx_select;
+		y = window_mouse_get_y()-dy_select;
+	}
+}
+
+if(!mouse_check_button(mb_left)){
+	selected = false;	
+	if(obj_master.node_selected == id){
+		obj_master.node_selected = noone;	
+	}
+}
+
+// Choices
+switch(type){
+	case ACTION.START_NODE:
+		sprite_index = spr_play;
+	break;
 }

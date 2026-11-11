@@ -1,5 +1,6 @@
 function Enums(){
 	enum ACTION {
+		START_NODE,
 	    MOVE,
 		MOVE_CHECKPOINT,
 		MOVE_ACTOR_DIRECT,
@@ -58,5 +59,14 @@ function Enums(){
 		CREATE_CHECKPOINT,
 		OPEN_CUTSCENE,
 	}
+	
+	enum CUT_DATA_TYPE{
+		ID,
+		TYPE,
+		_X,
+		_Y,
+		DATA
+	}
+
 
 }

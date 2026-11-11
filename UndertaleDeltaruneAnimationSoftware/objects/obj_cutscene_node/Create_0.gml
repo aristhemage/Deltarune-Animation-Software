@@ -8,5 +8,9 @@ hover = false;
 velocity_x = 0;
 velocity_y = 0;
 
-drag_multiplier = 1.3;
+drag_multiplier = 2;
 frict = 0.90;
+
+selected = false;
+dx_select = 0;
+dy_select = 0;

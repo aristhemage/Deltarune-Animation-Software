@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"create_cutscene_node",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"create_cutscene_node",
+  "parent":{
+    "name":"GUI",
+    "path":"folders/Scripts/Frontend/GUI.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

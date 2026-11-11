@@ -109,6 +109,7 @@
     {"id":{"name":"rm_gui_test","path":"rooms/rm_gui_test/rm_gui_test.yy",},},
     {"id":{"name":"rm_programmers_wanted","path":"rooms/rm_programmers_wanted/rm_programmers_wanted.yy",},},
     {"id":{"name":"build_dialogue","path":"scripts/build_dialogue/build_dialogue.yy",},},
+    {"id":{"name":"create_cutscene_node","path":"scripts/create_cutscene_node/create_cutscene_node.yy",},},
     {"id":{"name":"create_gui_checkbox","path":"scripts/create_gui_checkbox/create_gui_checkbox.yy",},},
     {"id":{"name":"create_gui_text","path":"scripts/create_gui_text/create_gui_text.yy",},},
     {"id":{"name":"create_guibox","path":"scripts/create_guibox/create_guibox.yy",},},

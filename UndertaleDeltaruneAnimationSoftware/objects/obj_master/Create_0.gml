@@ -201,3 +201,6 @@ colours = [
     "white",
     "yellow"
 ]
+
+node_selected = noone;
+cutscene_data = [];

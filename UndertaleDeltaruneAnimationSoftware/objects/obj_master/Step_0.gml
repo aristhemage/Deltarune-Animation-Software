@@ -8,3 +8,5 @@ if(debug){
 if(keyboard_check_released(vk_f1)){
 	debug = !debug;	
 }
+
+show_debug_message(cutscene_data)
